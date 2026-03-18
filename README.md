@@ -1,11 +1,11 @@
-# Feira na Assinatura
+# Feira Assinatura
 
 Projeto da componente curricular — Projeto de Software  
 Universidade Presbiteriana Mackenzie — Ciência da Computação
 
 ## Integrantes
 - Thiago Azevedo Bezerra de Menezes RA: 10443581
-- Julia Oliviera Pestana RA: 
+- Julia Oliviera Pestana RA: 10431863
 
 ## Caso de uso
 **Assinar Serviço de Feira** — assinatura de entrega semanal de frutas, legumes e verduras.
