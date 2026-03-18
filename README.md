@@ -1,17 +1,20 @@
-# Feira Assinatura
+# Santa Xepa
 
-Projeto da componente curricular — Projeto de Software  
+Projeto desenvolvido para a disciplina de Projeto de Software  
 Universidade Presbiteriana Mackenzie — Ciência da Computação
+
+## Descrição
+O Santa Xepa é um sistema de assinatura semanal de hortifruti, no qual o usuário pode selecionar um plano, montar sua cesta de produtos (frutas, legumes e verduras), informar endereço e realizar o pagamento, recebendo os itens em sua residência.
 
 ## Integrantes
 - Thiago Azevedo Bezerra de Menezes RA: 10443581
-- Julia Oliviera Pestana RA: 10431863
-
-## Caso de uso
-**Assinar Serviço de Feira** — assinatura de entrega semanal de frutas, legumes e verduras.
+- Júlia de Oliveira Pestana RA: 10431863
 
 ## Wiki do projeto
-Acesse a [Wiki](../../wiki) para ver o storyboard, diagrama de domínio e vídeos explicativos.
+Acesse a [Wiki](../../wiki) para ver:
+- Storyboard (protótipo de telas)
+- Diagrama de classes de domínio
+- Vídeos explicativos
 
 ## Estrutura do repositório
 ```
