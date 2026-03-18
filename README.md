@@ -7,8 +7,8 @@ Universidade Presbiteriana Mackenzie — Ciência da Computação
 O Santa Xepa é um sistema de assinatura semanal de hortifruti, no qual o usuário pode selecionar um plano, montar sua cesta de produtos (frutas, legumes e verduras), informar endereço e realizar o pagamento, recebendo os itens em sua residência.
 
 ## Integrantes
-- Thiago Azevedo Bezerra de Menezes RA: 10443581
 - Júlia de Oliveira Pestana RA: 10431863
+- Thiago Azevedo Bezerra de Menezes RA: 10443581
 
 ## Wiki do projeto
 Acesse a [Wiki](../../wiki) para ver:
