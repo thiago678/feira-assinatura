@@ -1,4 +1,4 @@
-# Santa Xepa
+# Santa Xepa 🍍
 
 Projeto desenvolvido para a disciplina de Projeto de Software  
 Universidade Presbiteriana Mackenzie — Ciência da Computação
