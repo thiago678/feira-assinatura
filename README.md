@@ -16,6 +16,8 @@ Acesse a [Wiki](../../wiki) para ver:
 - Diagrama de classes de domínio
 - Vídeos explicativos
 
+## Desenvolvimento
+
 ## Estrutura do repositório
 ```
 docs/storyboard/   → protótipo de telas (N1)
