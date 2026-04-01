@@ -21,7 +21,6 @@ Acesse a [Wiki](../../wiki) para ver:
 ## Estrutura do repositório
 ```
 docs/storyboard/   → protótipo de telas (N1)
-docs/dominio/      → diagrama de classes de domínio (N1)
 src/               → código-fonte Java (N2)
 ```
 
