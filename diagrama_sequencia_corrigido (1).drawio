@@ -1,4 +1,4 @@
-<mxGraphModel dx="10300" dy="5620" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="7000" pageHeight="5500" math="0" shadow="0">
+<mxGraphModel dx="6867" dy="3747" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="7000" pageHeight="5500" math="0" shadow="0">
   <root>
     <mxCell id="0" />
     <mxCell id="1" parent="0" />
@@ -11,20 +11,20 @@
     <mxCell id="hdr-ctl" parent="1" style="html=1;whiteSpace=wrap;" value="&lt;font style=&#39;font-size:13px&#39;&gt;«controller»&lt;br/&gt;&lt;b&gt;ctlSantaXepa&lt;/b&gt;&lt;/font&gt;" vertex="1">
       <mxGeometry height="70" width="160" x="480" y="200" as="geometry" />
     </mxCell>
-    <mxCell id="hdr-sms" parent="1" style="html=1;whiteSpace=wrap;" value="&lt;font style=&#39;font-size:13px&#39;&gt;&lt;u&gt;: VerificacaoSMS&lt;/u&gt;&lt;/font&gt;" vertex="1">
-      <mxGeometry height="70" width="160" x="800" y="200" as="geometry" />
+    <mxCell id="hdr-sms" parent="1" style="html=1;whiteSpace=wrap;" value="&amp;lt;&amp;lt;entity&amp;gt;&amp;gt;&#xa;: VerificacaoSMS" vertex="1">
+      <mxGeometry height="80" width="160" x="740" y="200" as="geometry" />
     </mxCell>
-    <mxCell id="hdr-planos" parent="1" style="html=1;whiteSpace=wrap;" value="&lt;font style=&#39;font-size:13px&#39;&gt;&lt;u&gt;: Planos&lt;/u&gt;&lt;/font&gt;" vertex="1">
-      <mxGeometry height="70" width="160" x="1000" y="200" as="geometry" />
+    <mxCell id="hdr-planos" parent="1" style="html=1;whiteSpace=wrap;" value="&amp;lt;&amp;lt;entity&amp;gt;&amp;gt;&#xa;: Planos" vertex="1">
+      <mxGeometry height="80" width="160" x="1000" y="200" as="geometry" />
     </mxCell>
-    <mxCell id="hdr-catalogo" parent="1" style="html=1;whiteSpace=wrap;" value="&lt;font style=&#39;font-size:13px&#39;&gt;&lt;u&gt;: CatalogoProdutos&lt;/u&gt;&lt;/font&gt;" vertex="1">
-      <mxGeometry height="70" width="160" x="1260" y="200" as="geometry" />
+    <mxCell id="hdr-catalogo" parent="1" style="html=1;whiteSpace=wrap;" value="&amp;lt;&amp;lt;entity&amp;gt;&amp;gt;&#xa;: CatalogoProdutos" vertex="1">
+      <mxGeometry height="80" width="160" x="1260" y="200" as="geometry" />
     </mxCell>
-    <mxCell id="hdr-itemcat" parent="1" style="html=1;whiteSpace=wrap;" value="&lt;font style=&#39;font-size:13px&#39;&gt;&lt;u&gt;: ItemCatalogo&lt;/u&gt;&lt;/font&gt;" vertex="1">
-      <mxGeometry height="70" width="160" x="1520" y="200" as="geometry" />
+    <mxCell id="hdr-itemcat" parent="1" style="html=1;whiteSpace=wrap;" value="&amp;lt;&amp;lt;entity&amp;gt;&amp;gt;&#xa;: ItemCatalogo" vertex="1">
+      <mxGeometry height="80" width="160" x="1520" y="200" as="geometry" />
     </mxCell>
-    <mxCell id="hdr-produto" parent="1" style="html=1;whiteSpace=wrap;" value="&lt;font style=&#39;font-size:13px&#39;&gt;&lt;u&gt;: Produto&lt;/u&gt;&lt;/font&gt;" vertex="1">
-      <mxGeometry height="70" width="160" x="1780" y="200" as="geometry" />
+    <mxCell id="hdr-produto" parent="1" style="html=1;whiteSpace=wrap;" value="&amp;lt;&amp;lt;entity&amp;gt;&amp;gt;&#xa;: Produto" vertex="1">
+      <mxGeometry height="80" width="160" x="1780" y="200" as="geometry" />
     </mxCell>
     <mxCell id="hdr-operadora" parent="1" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" value="&lt;b&gt;Operadora&lt;br/&gt;Cartão&lt;/b&gt;" vertex="1">
       <mxGeometry height="80" width="60" x="4180" y="230" as="geometry" />
@@ -49,8 +49,8 @@
     </mxCell>
     <mxCell id="ll-sms" edge="1" parent="1" style="endArrow=none;dashed=1;html=1;" value="">
       <mxGeometry relative="1" as="geometry">
-        <mxPoint x="879.41" y="260" as="sourcePoint" />
-        <mxPoint x="879.41" y="5350" as="targetPoint" />
+        <mxPoint x="820" y="270" as="sourcePoint" />
+        <mxPoint x="820" y="5360" as="targetPoint" />
       </mxGeometry>
     </mxCell>
     <mxCell id="ll-planos" edge="1" parent="1" style="endArrow=none;dashed=1;html=1;" value="">
@@ -102,9 +102,9 @@
       </mxGeometry>
     </mxCell>
     <mxCell id="act-sms-1" parent="1" style="html=1;points=[[0,0,0,0,5],[0,1,0,0,-5],[1,0,0,0,5],[1,1,0,0,-5]];perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;" value="" vertex="1">
-      <mxGeometry height="40" width="20" x="870" y="390" as="geometry" />
+      <mxGeometry height="40" width="20" x="810" y="390" as="geometry" />
     </mxCell>
-    <mxCell id="msg-2" edge="1" parent="1" style="endArrow=classic;html=1;rounded=0;" target="act-sms-1" value="2: enviarCodigoSMS()">
+    <mxCell id="msg-2" edge="1" parent="1" style="endArrow=classic;html=1;rounded=0;" value="2: enviarCodigoSMS()">
       <mxGeometry relative="1" as="geometry">
         <mxPoint x="570" y="405" as="sourcePoint" />
         <mxPoint x="810" y="405" as="targetPoint" />
@@ -129,15 +129,15 @@
       </mxGeometry>
     </mxCell>
     <mxCell id="act-sms-2" parent="1" style="html=1;points=[[0,0,0,0,5],[0,1,0,0,-5],[1,0,0,0,5],[1,1,0,0,-5]];perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;" value="" vertex="1">
-      <mxGeometry height="40" width="20" x="870" y="490" as="geometry" />
+      <mxGeometry height="40" width="20" x="810" y="490" as="geometry" />
     </mxCell>
-    <mxCell id="msg-4b" edge="1" parent="1" style="endArrow=classic;html=1;rounded=0;" target="act-sms-2" value="4.1: validarCodigo()">
+    <mxCell id="msg-4b" edge="1" parent="1" style="endArrow=classic;html=1;rounded=0;" value="4.1: validarCodigo()">
       <mxGeometry relative="1" as="geometry">
         <mxPoint x="570" y="505" as="sourcePoint" />
         <mxPoint x="810" y="505" as="targetPoint" />
       </mxGeometry>
     </mxCell>
-    <mxCell id="ret-sms" edge="1" parent="1" source="act-sms-2" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;endSize=8;exitX=0;exitY=1;exitDx=0;exitDy=-5;exitPerimeter=0;" value="return: codigoValido">
+    <mxCell id="ret-sms" edge="1" parent="1" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;endSize=8;" value="return: codigoValido">
       <mxGeometry relative="1" as="geometry">
         <mxPoint x="810" y="525" as="sourcePoint" />
         <mxPoint x="570" y="525" as="targetPoint" />
@@ -191,7 +191,7 @@
     <mxCell id="hdr-cesta" parent="1" style="html=1;whiteSpace=wrap;" value="&lt;font style=&#39;font-size:13px&#39;&gt;&lt;u&gt;: Cesta&lt;/u&gt;&lt;/font&gt;" vertex="1">
       <mxGeometry height="60" width="160" x="2040" y="1010" as="geometry" />
     </mxCell>
-    <mxCell id="msg-create-cesta" edge="1" parent="1" style="endArrow=classic;html=1;rounded=0;dashed=1;" value="9: &amp;lt;&amp;lt;create&amp;gt;&amp;gt;">
+    <mxCell id="msg-create-cesta" edge="1" parent="1" style="endArrow=classic;html=1;rounded=0;dashed=1;" value="9: &amp;lt;&amp;lt;create&amp;gt;&amp;gt;(plano)">
       <mxGeometry relative="1" as="geometry">
         <mxPoint x="570" y="1035" as="sourcePoint" />
         <mxPoint x="2040" y="1035" as="targetPoint" />
@@ -398,7 +398,7 @@
     <mxCell id="act-ic-3" parent="1" style="html=1;points=[[0,0,0,0,5],[0,1,0,0,-5],[1,0,0,0,5],[1,1,0,0,-5]];perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;" value="" vertex="1">
       <mxGeometry height="40" width="20" x="1590" y="1740" as="geometry" />
     </mxCell>
-    <mxCell id="msg-21b" edge="1" parent="1" style="endArrow=classic;html=1;rounded=0;" value="20.1: verificarVerdorasDisponiveis()">
+    <mxCell id="msg-21b" edge="1" parent="1" style="endArrow=classic;html=1;rounded=0;" value="20.1: verificarVerdurasDisponiveis()">
       <mxGeometry relative="1" as="geometry">
         <mxPoint x="1350" y="1755" as="sourcePoint" />
         <mxPoint x="1590" y="1755" as="targetPoint" />
@@ -533,7 +533,7 @@
     <mxCell id="hdr-assinatura" parent="1" style="html=1;whiteSpace=wrap;" value="&lt;font style=&#39;font-size:13px&#39;&gt;&lt;u&gt;: Assinatura&lt;/u&gt;&lt;/font&gt;" vertex="1">
       <mxGeometry height="60" width="160" x="2548" y="2300" as="geometry" />
     </mxCell>
-    <mxCell id="msg-create-ass" edge="1" parent="1" style="endArrow=classic;html=1;rounded=0;dashed=1;" value="30: &amp;lt;&amp;lt;create&amp;gt;&amp;gt;(plano, cesta, endereco, pref)">
+    <mxCell id="msg-create-ass" edge="1" parent="1" style="endArrow=classic;html=1;rounded=0;dashed=1;" value="30: &amp;lt;&amp;lt;create&amp;gt;&amp;gt;(plano, endereco, pref)">
       <mxGeometry relative="1" as="geometry">
         <mxPoint x="570" y="2325" as="sourcePoint" />
         <mxPoint x="2548" y="2325" as="targetPoint" />
@@ -694,8 +694,8 @@
         <mxPoint x="340" y="3265" as="targetPoint" />
       </mxGeometry>
     </mxCell>
-    <mxCell id="hdr-assinante-obj" parent="1" style="html=1;whiteSpace=wrap;" value=": Assinante" vertex="1">
-      <mxGeometry height="60" width="160" x="650" y="540" as="geometry" />
+    <mxCell id="hdr-assinante-obj" parent="1" style="html=1;whiteSpace=wrap;" value="&amp;lt;&amp;lt;entity&amp;gt;&amp;gt;&#xa;: Assinante" vertex="1">
+      <mxGeometry height="80" width="160" x="650" y="540" as="geometry" />
     </mxCell>
     <mxCell id="ll-assinante-obj" edge="1" parent="1" style="endArrow=none;dashed=1;html=1;" value="">
       <mxGeometry relative="1" as="geometry">
@@ -704,14 +704,46 @@
       </mxGeometry>
     </mxCell>
     <mxCell id="msg-create-assinante" edge="1" parent="1" style="endArrow=classic;html=1;rounded=0;dashed=1;" value="4.2: &amp;lt;&amp;lt;create&amp;gt;&amp;gt;(dadosCelular)">
-      <mxGeometry relative="1" x="-0.1111" y="-30" as="geometry">
-        <mxPoint as="offset" />
+      <mxGeometry relative="1" as="geometry">
         <mxPoint x="560" y="570" as="sourcePoint" />
         <mxPoint x="650" y="570" as="targetPoint" />
       </mxGeometry>
     </mxCell>
     <mxCell id="act-ctl-create-ass" parent="1" style="html=1;points=[[0,0,0,0,5],[0,1,0,0,-5],[1,0,0,0,5],[1,1,0,0,-5]];perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;" value="" vertex="1">
       <mxGeometry height="50" width="20" x="550" y="530" as="geometry" />
+    </mxCell>
+    <mxCell id="hdr-historico" parent="1" style="html=1;whiteSpace=wrap;" value="&amp;lt;&amp;lt;entity&amp;gt;&amp;gt;&#xa;: HistoricoStatus" vertex="1">
+      <mxGeometry height="80" width="170" x="4480" y="2388" as="geometry" />
+    </mxCell>
+    <mxCell id="ll-historico" edge="1" parent="1" style="endArrow=none;dashed=1;html=1;" value="">
+      <mxGeometry relative="1" as="geometry">
+        <mxPoint x="4565" y="2468" as="sourcePoint" />
+        <mxPoint x="4565" y="4000" as="targetPoint" />
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="msg-create-hist" edge="1" parent="1" style="endArrow=classic;html=1;rounded=0;dashed=1;" value="31.1: &amp;lt;&amp;lt;create&amp;gt;&amp;gt;(aguardandoAprovacao)">
+      <mxGeometry relative="1" as="geometry">
+        <mxPoint x="560" y="2415" as="sourcePoint" />
+        <mxPoint x="4480" y="2415" as="targetPoint" />
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="act-ctl-hist-1" parent="1" style="html=1;points=[[0,0,0,0,5],[0,1,0,0,-5],[1,0,0,0,5],[1,1,0,0,-5]];perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;" value="" vertex="1">
+      <mxGeometry height="50" width="20" x="550" y="2375" as="geometry" />
+    </mxCell>
+    <mxCell id="msg-reg-hist" edge="1" parent="1" style="endArrow=classic;html=1;rounded=0;" value="38.1: registrarStatus(aprovado)">
+      <mxGeometry relative="1" as="geometry">
+        <mxPoint x="560" y="2950" as="sourcePoint" />
+        <mxPoint x="4565" y="2950" as="targetPoint" />
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="act-hist-reg" parent="1" style="html=1;points=[[0,0,0,0,5],[0,1,0,0,-5],[1,0,0,0,5],[1,1,0,0,-5]];perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;" value="" vertex="1">
+      <mxGeometry height="30" width="20" x="4555" y="2950" as="geometry" />
+    </mxCell>
+    <mxCell id="frag-loop" parent="1" style="swimlane;startSize=30;fillColor=#f5f5f5;strokeColor=#666666;fontColor=#333333;fontStyle=1;fontSize=10;align=left;spacingLeft=5;" value="loop(1,3)&#xa;[para cada tipo: fruta, legume, verdura]" vertex="1">
+      <mxGeometry height="900" width="2250" x="290" y="1100" as="geometry" />
+    </mxCell>
+    <mxCell id="sd-frame" parent="1" style="swimlane;startSize=30;fillColor=none;strokeColor=#000000;fontStyle=1;fontSize=12;align=left;spacingLeft=8;" value="sd AssinarServiçoDeFeira" vertex="1">
+      <mxGeometry height="3450" width="4700" x="50" y="170" as="geometry" />
     </mxCell>
   </root>
 </mxGraphModel>
