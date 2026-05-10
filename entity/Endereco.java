@@ -3,7 +3,7 @@ package com.santaxepa.entity;
 import java.util.Date;
 
 /**
- * Entidade Endereco. Mensagem 28: &lt;&lt;create&gt;&gt;(dadosEndereco).
+ * Entidade Endereco. Mensagem 28: create;(dadosEndereco).
  */
 public class Endereco {
 
