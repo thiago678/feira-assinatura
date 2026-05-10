@@ -6,7 +6,7 @@ import java.util.Date;
 import java.util.UUID;
 
 /**
- * Entidade Entrega. Mensagem 40: &lt;&lt;create&gt;&gt;(numProtocolo, endereco, pref).
+ // * Entidade Entrega. Mensagem 40: create;(numProtocolo, endereco, pref).
  */
 public class Entrega {
 
