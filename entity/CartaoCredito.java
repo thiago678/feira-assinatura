@@ -5,7 +5,7 @@ import com.santaxepa.entity.enums.MetodoDePagamento;
 import java.util.Date;
 
 /**
- * Entidade CartaoCredito. Mensagem 35: &lt;&lt;create&gt;&gt;(dadosCartao).
+ * Entidade CartaoCredito. Mensagem 35: create;(dadosCartao).
  * O número do cartão é armazenado mascarado (apenas os 4 últimos dígitos).
  */
 public class CartaoCredito {
