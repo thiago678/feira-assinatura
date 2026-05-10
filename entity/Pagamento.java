@@ -6,7 +6,7 @@ import java.util.Date;
 import java.util.UUID;
 
 /**
- * Entidade Pagamento. Mensagens 36 (validarPagamento) e 37 (&lt;&lt;create&gt;&gt;).
+ * Entidade Pagamento. Mensagens 36 (validarPagamento) e 37 (create;).
  * Simula a comunicação com a Operadora do Cartão de Crédito.
  */
 public class Pagamento {
