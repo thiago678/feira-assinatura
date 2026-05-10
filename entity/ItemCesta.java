@@ -1,7 +1,7 @@
 package com.santaxepa.entity;
 
 /**
- * Entidade ItemCesta. Mensagens 14.1, 19.1, 24.1: &lt;&lt;create&gt;&gt;.
+ * Entidade ItemCesta. Mensagens 14.1, 19.1, 24.1: create;.
  * Representa um item escolhido pelo Assinante e adicionado à Cesta.
  */
 public class ItemCesta {
