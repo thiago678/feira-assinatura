@@ -7,7 +7,7 @@ import java.util.Date;
 import java.util.List;
 
 /**
- * Entidade HistoricoStatus. Mensagens 31.1: &lt;&lt;create&gt;&gt;(aguardandoAprovacao)
+ * Entidade HistoricoStatus. Mensagens 31.1: create;(aguardandoAprovacao)
  * e 38.1: registrarStatus(aprovado).
  */
 public class HistoricoStatus {
