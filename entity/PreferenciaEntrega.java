@@ -1,7 +1,7 @@
 package com.santaxepa.entity;
 
 /**
- * Entidade PreferenciaEntrega. Mensagem 29: &lt;&lt;create&gt;&gt;(preferencias).
+ * Entidade PreferenciaEntrega. Mensagem 29: create;(preferencias).
  */
 public class PreferenciaEntrega {
 
