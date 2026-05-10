@@ -6,7 +6,6 @@ import java.util.Date;
 
 /**
  * Entidade Assinante. Mensagem 4.2 do diagrama de sequência:
- * &lt;&lt;create&gt;&gt;(dadosCelular)
  */
 public class Assinante {
 
