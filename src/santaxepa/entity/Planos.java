@@ -51,7 +51,6 @@ public class Planos {
         // Carga inicial dos planos (em um sistema real viria de um BD/CSV)
         planosDisponiveis.add(new Plano("P01", "Mini Xepa", "Cesta para 1-2 pessoas", 49.90, 3, 2, 2));
         planosDisponiveis.add(new Plano("P02", "Família Xepa", "Cesta para 3-4 pessoas", 89.90, 5, 4, 4));
-        planosDisponiveis.add(new Plano("P03", "Xepa Premium", "Cesta para 5+ pessoas", 139.90, 8, 6, 6));
     }
 
     /** Mensagem 5: buscarPlanos() */
