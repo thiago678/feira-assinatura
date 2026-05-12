@@ -6,31 +6,45 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-/**
- * Entidade HistoricoStatus. Mensagens 31.1: create;(aguardandoAprovacao)
- * e 38.1: registrarStatus(aprovado).
- */
 public class HistoricoStatus {
 
-    /** Registro individual de mudança de status. */
     public static class Registro {
-        private final StatusAssinatura status;
-        private final Date dataRegistro;
-        private final String observacao;
+        private final String entidade;
+        private final String statusAnterior;
+        private final String statusNovo;
+        private final String motivo;
+        private final String responsavel;
+        private final Date dataAlteracao;
 
-        public Registro(StatusAssinatura status, String observacao) {
-            this.status = status;
-            this.dataRegistro = new Date();
-            this.observacao = observacao;
+        public Registro(String entidade, String statusAnterior, String statusNovo,
+                        String motivo, String responsavel) {
+            this.entidade = entidade;
+            this.statusAnterior = statusAnterior;
+            this.statusNovo = statusNovo;
+            this.motivo = motivo;
+            this.responsavel = responsavel;
+            this.dataAlteracao = new Date();
         }
 
-        public StatusAssinatura getStatus() { return status; }
-        public Date getDataRegistro() { return dataRegistro; }
-        public String getObservacao() { return observacao; }
+        public String getEntidade()       { return entidade; }
+        public String getStatusAnterior() { return statusAnterior; }
+        public String getStatusNovo()     { return statusNovo; }
+        public String getMotivo()         { return motivo; }
+        public String getResponsavel()    { return responsavel; }
+        public Date getDataAlteracao()    { return dataAlteracao; }
+
+        // compatibilidade com código existente
+        public StatusAssinatura getStatus() {
+            try { return StatusAssinatura.valueOf(statusNovo); }
+            catch (Exception e) { return null; }
+        }
+        public String getObservacao() { return motivo; }
+        public Date getDataRegistro() { return dataAlteracao; }
 
         @Override
         public String toString() {
-            return String.format("[%tF %<tT] %s — %s", dataRegistro, status, observacao);
+            return String.format("[%tF %<tT] %s: %s → %s (%s)",
+                    dataAlteracao, entidade, statusAnterior, statusNovo, motivo);
         }
     }
 
@@ -39,16 +53,34 @@ public class HistoricoStatus {
 
     public HistoricoStatus(StatusAssinatura statusInicial) {
         this.id = "HST-" + System.currentTimeMillis();
-        registrarStatus(statusInicial, "Status inicial");
+        registrarMudanca("Assinatura", "-", statusInicial.name(), "Status inicial", "sistema");
     }
 
-    /** Mensagem 38.1: registrarStatus(novoStatus) */
+    /** Mensagem 29.1 / 38.1: registrarStatus(novoStatus) — chamado por Assinatura */
     public void registrarStatus(StatusAssinatura novoStatus, String observacao) {
-        this.registros.add(new Registro(novoStatus, observacao));
+        String anterior = registros.isEmpty() ? "-"
+                : registros.get(registros.size() - 1).getStatusNovo();
+        registrarMudanca("Assinatura", anterior, novoStatus.name(), observacao, "sistema");
     }
 
-    public String getId() { return id; }
-    public List<Registro> getRegistros() { return new ArrayList<>(registros); }
+    /** Conforme diagrama de classes: registrarMudanca(entidade, statusAnt, statusNovo, motivo, responsavel) */
+    public void registrarMudanca(String entidade, String statusAnterior,
+                                  String statusNovo, String motivo, String responsavel) {
+        registros.add(new Registro(entidade, statusAnterior, statusNovo, motivo, responsavel));
+    }
+
+    /** Conforme diagrama de classes: consultarHistorico(entidade) */
+    public List<Registro> consultarHistorico(String entidade) {
+        List<Registro> filtrado = new ArrayList<>();
+        for (Registro r : registros) {
+            if (entidade == null || r.getEntidade().equalsIgnoreCase(entidade))
+                filtrado.add(r);
+        }
+        return filtrado;
+    }
+
+    public String getId()                 { return id; }
+    public List<Registro> getRegistros()  { return new ArrayList<>(registros); }
     public Registro getUltimoRegistro() {
         return registros.isEmpty() ? null : registros.get(registros.size() - 1);
     }

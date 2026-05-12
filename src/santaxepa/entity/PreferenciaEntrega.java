@@ -1,40 +1,46 @@
 package com.santaxepa.entity;
 
-/**
- * Entidade PreferenciaEntrega. Mensagem 29: create;(preferencias).
- */
 public class PreferenciaEntrega {
 
-    /** Dia da semana preferido para entrega (1=Domingo ... 7=Sábado). */
-    private int diaSemanaPreferido;
-    /** Faixa de horário preferida (ex.: "08-12", "13-17", "18-21"). */
-    private String faixaHorario;
+    private String diaSemanaPreferido;
+    private String turnoPreferido;
     private String observacoes;
-    private boolean entregaSemContato;
+    private boolean aceitaSubstituicao;
+    private String instrucaoAdicional;
 
-    public PreferenciaEntrega(int diaSemanaPreferido, String faixaHorario,
-                              String observacoes, boolean entregaSemContato) {
+    public PreferenciaEntrega(String diaSemanaPreferido, String turnoPreferido,
+                              String observacoes, boolean aceitaSubstituicao,
+                              String instrucaoAdicional) {
         this.diaSemanaPreferido = diaSemanaPreferido;
-        this.faixaHorario = faixaHorario;
+        this.turnoPreferido = turnoPreferido;
         this.observacoes = observacoes;
-        this.entregaSemContato = entregaSemContato;
+        this.aceitaSubstituicao = aceitaSubstituicao;
+        this.instrucaoAdicional = instrucaoAdicional;
     }
 
-    public int getDiaSemanaPreferido() { return diaSemanaPreferido; }
-    public String getFaixaHorario() { return faixaHorario; }
-    public String getObservacoes() { return observacoes; }
-    public boolean isEntregaSemContato() { return entregaSemContato; }
-
-    public String diaSemanaTexto() {
-        String[] dias = {"Domingo", "Segunda", "Terça", "Quarta", "Quinta", "Sexta", "Sábado"};
-        return dias[(diaSemanaPreferido - 1) % 7];
+    public void atualizarPreferencias(String diaSemana, String turno, String obs,
+                                       boolean substituicao, String instrucao) {
+        this.diaSemanaPreferido = diaSemana;
+        this.turnoPreferido = turno;
+        this.observacoes = obs;
+        this.aceitaSubstituicao = substituicao;
+        this.instrucaoAdicional = instrucao;
     }
+
+    public boolean permiteSubstituicao()      { return aceitaSubstituicao; }
+
+    public String getDiaSemanaPreferido()     { return diaSemanaPreferido; }
+    public String getTurnoPreferido()         { return turnoPreferido; }
+    public String getObservacoes()            { return observacoes; }
+    public boolean isAceitaSubstituicao()     { return aceitaSubstituicao; }
+    public String getInstrucaoAdicional()     { return instrucaoAdicional; }
 
     @Override
     public String toString() {
-        return String.format("Preferência: %s, %sh%s%s",
-                diaSemanaTexto(), faixaHorario,
-                entregaSemContato ? " (sem contato)" : "",
-                (observacoes != null && !observacoes.isEmpty()) ? " — " + observacoes : "");
+        return String.format("Preferência: %s, %s%s%s",
+                diaSemanaPreferido, turnoPreferido,
+                aceitaSubstituicao ? " (aceita substituição)" : "",
+                (instrucaoAdicional != null && !instrucaoAdicional.isEmpty())
+                        ? " — " + instrucaoAdicional : "");
     }
 }

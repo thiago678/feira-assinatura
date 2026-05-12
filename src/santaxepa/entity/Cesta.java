@@ -6,9 +6,6 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-/**
- * Entidade Cesta. Mensagens 14, 19, 24: adicionarItemCesta(itens).
- */
 public class Cesta {
 
     private String id;
@@ -21,15 +18,16 @@ public class Cesta {
     private int totalItens;
     private List<ItemCesta> itens = new ArrayList<>();
 
-    public Cesta() {
+    /** Mensagem 9: «create»(plano) */
+    public Cesta(Planos.Plano plano) {
         this.id = "CST-" + System.currentTimeMillis();
+        this.nome = "Cesta " + plano.getNome();
         this.semanaReferencia = new Date();
         this.status = StatusCesta.EM_MONTAGEM;
         this.valorTotal = 0.0;
         this.totalItens = 0;
     }
 
-    /** Mensagens 14, 19, 24: adicionarItemCesta(item) */
     public void adicionarItemCesta(ItemCesta item) {
         this.itens.add(item);
         recalcular();
@@ -55,30 +53,28 @@ public class Cesta {
         this.dataConfirmacao = new Date();
     }
 
-    public void mudarStatus(StatusCesta novoStatus) {
-        this.status = novoStatus;
-    }
+    public void mudarStatus(StatusCesta novoStatus) { this.status = novoStatus; }
 
     private void recalcular() {
         calcularValorTotal();
         calcularTotalItens();
     }
 
-    public String getId() { return id; }
-    public String getNome() { return nome; }
-    public void setNome(String nome) { this.nome = nome; }
-    public Date getSemanaReferencia() { return semanaReferencia; }
-    public Date getDataConfirmacao() { return dataConfirmacao; }
-    public Date getDataMontagem() { return dataMontagem; }
-    public StatusCesta getStatus() { return status; }
-    public double getValorTotal() { return valorTotal; }
-    public int getTotalItens() { return totalItens; }
-    public List<ItemCesta> getItens() { return new ArrayList<>(itens); }
+    public String getId()              { return id; }
+    public String getNome()            { return nome; }
+    public void setNome(String nome)   { this.nome = nome; }
+    public Date getSemanaReferencia()  { return semanaReferencia; }
+    public Date getDataConfirmacao()   { return dataConfirmacao; }
+    public Date getDataMontagem()      { return dataMontagem; }
+    public StatusCesta getStatus()     { return status; }
+    public double getValorTotal()      { return valorTotal; }
+    public int getTotalItens()         { return totalItens; }
+    public List<ItemCesta> getItens()  { return new ArrayList<>(itens); }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append(String.format("Cesta %s | %d itens | R$ %.2f%n", id, totalItens, valorTotal));
+        sb.append(String.format("Cesta %s | %d itens%n", id, totalItens));
         for (ItemCesta i : itens) sb.append("  - ").append(i).append('\n');
         return sb.toString();
     }
