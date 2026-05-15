@@ -1,0 +1,603 @@
+<mxGraphModel dx="1869" dy="1125" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="7000" pageHeight="5500" math="0" shadow="0">
+  <root>
+    <mxCell id="0" />
+    <mxCell id="1" parent="0" />
+    <mxCell id="hdr-actor" value="&lt;b&gt;Assinante&lt;/b&gt;" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" parent="1" vertex="1">
+      <mxGeometry x="60" y="230" width="40" height="80" as="geometry" />
+    </mxCell>
+    <mxCell id="hdr-gui" value="&lt;font style=&#39;font-size:13px&#39;&gt;«boundary»&lt;br/&gt;&lt;b&gt;guiSantaXepa&lt;/b&gt;&lt;/font&gt;" style="html=1;whiteSpace=wrap;" parent="1" vertex="1">
+      <mxGeometry x="220" y="200" width="160" height="70" as="geometry" />
+    </mxCell>
+    <mxCell id="hdr-ctl" value="&lt;font style=&#39;font-size:13px&#39;&gt;«controller»&lt;br/&gt;&lt;b&gt;ctlSantaXepa&lt;/b&gt;&lt;/font&gt;" style="html=1;whiteSpace=wrap;" parent="1" vertex="1">
+      <mxGeometry x="480" y="200" width="160" height="70" as="geometry" />
+    </mxCell>
+    <mxCell id="hdr-sms" value="&lt;font style=&#39;font-size:13px&#39;&gt;«entity»&lt;br/&gt;&lt;u&gt;: VerificacaoSMS&lt;/u&gt;&lt;/font&gt;" style="html=1;whiteSpace=wrap;" parent="1" vertex="1">
+      <mxGeometry x="740" y="200" width="160" height="70" as="geometry" />
+    </mxCell>
+    <mxCell id="hdr-assinante-ent" value="&lt;font style=&#39;font-size:13px&#39;&gt;«entity»&lt;br/&gt;&lt;u&gt;: Assinante&lt;/u&gt;&lt;/font&gt;" style="html=1;whiteSpace=wrap;" parent="1" vertex="1">
+      <mxGeometry x="1000" y="200" width="160" height="70" as="geometry" />
+    </mxCell>
+    <mxCell id="hdr-planos" value="&lt;font style=&#39;font-size:13px&#39;&gt;«entity»&lt;br/&gt;&lt;u&gt;: Plano&lt;/u&gt;&lt;/font&gt;" style="html=1;whiteSpace=wrap;" parent="1" vertex="1">
+      <mxGeometry x="1260" y="200" width="160" height="70" as="geometry" />
+    </mxCell>
+    <mxCell id="hdr-catalogo" value="&lt;font style=&#39;font-size:13px&#39;&gt;«entity»&lt;br/&gt;&lt;u&gt;: CatalogoProdutos&lt;/u&gt;&lt;/font&gt;" style="html=1;whiteSpace=wrap;" parent="1" vertex="1">
+      <mxGeometry x="1520" y="200" width="160" height="70" as="geometry" />
+    </mxCell>
+    <mxCell id="hdr-itemcat" value="&lt;font style=&#39;font-size:13px&#39;&gt;«entity»&lt;br/&gt;&lt;u&gt;: ItemCatalogo&lt;/u&gt;&lt;/font&gt;" style="html=1;whiteSpace=wrap;" parent="1" vertex="1">
+      <mxGeometry x="1780" y="200" width="160" height="70" as="geometry" />
+    </mxCell>
+    <mxCell id="hdr-produto" value="&lt;font style=&#39;font-size:13px&#39;&gt;«entity»&lt;br/&gt;&lt;u&gt;: Produto&lt;/u&gt;&lt;/font&gt;" style="html=1;whiteSpace=wrap;" parent="1" vertex="1">
+      <mxGeometry x="2040" y="200" width="160" height="70" as="geometry" />
+    </mxCell>
+    <mxCell id="hdr-operadora" value="&lt;b&gt;Operadora&lt;br/&gt;Cartão&lt;/b&gt;" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" parent="1" vertex="1">
+      <mxGeometry x="4920" y="200" width="60" height="80" as="geometry" />
+    </mxCell>
+    <mxCell id="ll-actor" value="" style="endArrow=none;dashed=1;html=1;" parent="1" edge="1">
+      <mxGeometry relative="1" as="geometry">
+        <mxPoint x="80" y="330" as="sourcePoint" />
+        <mxPoint x="80" y="5360" as="targetPoint" />
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="ll-gui" value="" style="endArrow=none;dashed=1;html=1;" parent="1" edge="1">
+      <mxGeometry relative="1" as="geometry">
+        <mxPoint x="300" y="270" as="sourcePoint" />
+        <mxPoint x="300" y="5360" as="targetPoint" />
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="ll-ctl" value="" style="endArrow=none;dashed=1;html=1;" parent="1" edge="1">
+      <mxGeometry relative="1" as="geometry">
+        <mxPoint x="560" y="270" as="sourcePoint" />
+        <mxPoint x="560" y="5360" as="targetPoint" />
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="ll-sms" value="" style="endArrow=none;dashed=1;html=1;" parent="1" edge="1">
+      <mxGeometry relative="1" as="geometry">
+        <mxPoint x="820" y="270" as="sourcePoint" />
+        <mxPoint x="820" y="5360" as="targetPoint" />
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="ll-assinante-ent" value="" style="endArrow=none;dashed=1;html=1;" parent="1" edge="1">
+      <mxGeometry relative="1" as="geometry">
+        <mxPoint x="1080" y="270" as="sourcePoint" />
+        <mxPoint x="1080" y="5360" as="targetPoint" />
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="ll-planos" value="" style="endArrow=none;dashed=1;html=1;" parent="1" edge="1">
+      <mxGeometry relative="1" as="geometry">
+        <mxPoint x="1340" y="270" as="sourcePoint" />
+        <mxPoint x="1340" y="5360" as="targetPoint" />
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="ll-catalogo" value="" style="endArrow=none;dashed=1;html=1;" parent="1" edge="1">
+      <mxGeometry relative="1" as="geometry">
+        <mxPoint x="1600" y="270" as="sourcePoint" />
+        <mxPoint x="1600" y="5360" as="targetPoint" />
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="ll-itemcat" value="" style="endArrow=none;dashed=1;html=1;" parent="1" edge="1">
+      <mxGeometry relative="1" as="geometry">
+        <mxPoint x="1860" y="270" as="sourcePoint" />
+        <mxPoint x="1860" y="5360" as="targetPoint" />
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="ll-produto" value="" style="endArrow=none;dashed=1;html=1;" parent="1" edge="1">
+      <mxGeometry relative="1" as="geometry">
+        <mxPoint x="2120" y="270" as="sourcePoint" />
+        <mxPoint x="2120" y="5360" as="targetPoint" />
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="ll-operadora" value="" style="endArrow=none;dashed=1;html=1;" parent="1" edge="1">
+      <mxGeometry relative="1" as="geometry">
+        <mxPoint x="4950" y="300" as="sourcePoint" />
+        <mxPoint x="4950" y="5330" as="targetPoint" />
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="act-gui-1" value="" style="html=1;points=[[0,0,0,0,5],[0,1,0,0,-5],[1,0,0,0,5],[1,1,0,0,-5]];perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;" parent="1" vertex="1">
+      <mxGeometry x="290" y="380" width="20" height="50" as="geometry" />
+    </mxCell>
+    <mxCell id="msg-0" value="0: informarCelular()" style="endArrow=classic;html=1;rounded=0;labelBackgroundColor=#FFFFFF;" parent="1" edge="1">
+      <mxGeometry relative="1" as="geometry">
+        <mxPoint x="80" y="400" as="sourcePoint" />
+        <mxPoint x="290" y="400" as="targetPoint" />
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="act-ctl-1" value="" style="html=1;points=[[0,0,0,0,5],[0,1,0,0,-5],[1,0,0,0,5],[1,1,0,0,-5]];perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;" parent="1" vertex="1">
+      <mxGeometry x="550" y="380" width="20" height="60" as="geometry" />
+    </mxCell>
+    <mxCell id="msg-1" value="1: validarNumero()" style="endArrow=classic;html=1;rounded=0;" parent="1" edge="1">
+      <mxGeometry relative="1" as="geometry">
+        <mxPoint x="310" y="400" as="sourcePoint" />
+        <mxPoint x="550" y="400" as="targetPoint" />
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="act-sms-1" value="" style="html=1;points=[[0,0,0,0,5],[0,1,0,0,-5],[1,0,0,0,5],[1,1,0,0,-5]];perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;" parent="1" vertex="1">
+      <mxGeometry x="810" y="390" width="20" height="40" as="geometry" />
+    </mxCell>
+    <mxCell id="msg-2" value="2: enviarCodigoSMS()" style="endArrow=classic;html=1;rounded=0;" parent="1" edge="1">
+      <mxGeometry relative="1" as="geometry">
+        <mxPoint x="570" y="405" as="sourcePoint" />
+        <mxPoint x="810" y="405" as="targetPoint" />
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="act-gui-2" value="" style="html=1;points=[[0,0,0,0,5],[0,1,0,0,-5],[1,0,0,0,5],[1,1,0,0,-5]];perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;" parent="1" vertex="1">
+      <mxGeometry x="290" y="480" width="20" height="50" as="geometry" />
+    </mxCell>
+    <mxCell id="msg-3" value="3: informarCodigoSMS()" style="endArrow=classic;html=1;rounded=0;labelBackgroundColor=#FFFFFF;" parent="1" edge="1">
+      <mxGeometry relative="1" as="geometry">
+        <mxPoint x="80" y="500" as="sourcePoint" />
+        <mxPoint x="290" y="500" as="targetPoint" />
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="act-ctl-2" value="" style="html=1;points=[[0,0,0,0,5],[0,1,0,0,-5],[1,0,0,0,5],[1,1,0,0,-5]];perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;" parent="1" vertex="1">
+      <mxGeometry x="550" y="480" width="20" height="65" as="geometry" />
+    </mxCell>
+    <mxCell id="msg-4" value="4: validarCodigoConfirmacao()" style="endArrow=classic;html=1;rounded=0;" parent="1" edge="1">
+      <mxGeometry relative="1" as="geometry">
+        <mxPoint x="310" y="500" as="sourcePoint" />
+        <mxPoint x="550" y="500" as="targetPoint" />
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="act-sms-2" value="" style="html=1;points=[[0,0,0,0,5],[0,1,0,0,-5],[1,0,0,0,5],[1,1,0,0,-5]];perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;" parent="1" vertex="1">
+      <mxGeometry x="810" y="490" width="20" height="40" as="geometry" />
+    </mxCell>
+    <mxCell id="msg-4b" value="4.1: validarCodigo()" style="endArrow=classic;html=1;rounded=0;" parent="1" edge="1">
+      <mxGeometry relative="1" as="geometry">
+        <mxPoint x="570" y="505" as="sourcePoint" />
+        <mxPoint x="810" y="505" as="targetPoint" />
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="ret-sms" value="return: codigoValido" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;endSize=8;" parent="1" edge="1">
+      <mxGeometry relative="1" as="geometry">
+        <mxPoint x="810" y="525" as="sourcePoint" />
+        <mxPoint x="570" y="525" as="targetPoint" />
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="frag-alt-divider" value="" style="endArrow=none;dashed=1;strokeColor=#666666;html=1;" parent="1" edge="1">
+      <mxGeometry relative="1" as="geometry">
+        <mxPoint x="80" y="695" as="sourcePoint" />
+        <mxPoint x="1180" y="695" as="targetPoint" />
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="act-ctl-busca-ass" value="" style="html=1;points=[[0,0,0,0,5],[0,1,0,0,-5],[1,0,0,0,5],[1,1,0,0,-5]];perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;" parent="1" vertex="1">
+      <mxGeometry x="550" y="590" width="20" height="80" as="geometry" />
+    </mxCell>
+    <mxCell id="msg-busca-ass" value="4.2: buscarPorTelefone(telefone)" style="endArrow=classic;html=1;rounded=0;" parent="1" edge="1">
+      <mxGeometry relative="1" as="geometry">
+        <mxPoint x="570" y="608" as="sourcePoint" />
+        <mxPoint x="1070" y="608" as="targetPoint" />
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="act-ass-busca" value="" style="html=1;points=[[0,0,0,0,5],[0,1,0,0,-5],[1,0,0,0,5],[1,1,0,0,-5]];perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;" parent="1" vertex="1">
+      <mxGeometry x="1070" y="600" width="20" height="30" as="geometry" />
+    </mxCell>
+    <mxCell id="ret-busca-ass" value="return: assinante" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;endSize=8;" parent="1" edge="1">
+      <mxGeometry relative="1" as="geometry">
+        <mxPoint x="1070" y="630" as="sourcePoint" />
+        <mxPoint x="570" y="630" as="targetPoint" />
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="msg-att-telVerif" value="4.3: atualizarTelefoneCelularVerificado(true)" style="endArrow=classic;html=1;rounded=0;" parent="1" edge="1">
+      <mxGeometry relative="1" as="geometry">
+        <mxPoint x="570" y="658" as="sourcePoint" />
+        <mxPoint x="1070" y="658" as="targetPoint" />
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="act-ass-att" value="" style="html=1;points=[[0,0,0,0,5],[0,1,0,0,-5],[1,0,0,0,5],[1,1,0,0,-5]];perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;" parent="1" vertex="1">
+      <mxGeometry x="1070" y="650" width="20" height="20" as="geometry" />
+    </mxCell>
+    <mxCell id="msg-create-ass-new" value="4.4: «create»(telefone)" style="endArrow=classic;html=1;rounded=0;dashed=1;" parent="1" edge="1">
+      <mxGeometry relative="1" as="geometry">
+        <mxPoint x="570" y="715" as="sourcePoint" />
+        <mxPoint x="1070" y="715" as="targetPoint" />
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="act-ass-new" value="" style="html=1;points=[[0,0,0,0,5],[0,1,0,0,-5],[1,0,0,0,5],[1,1,0,0,-5]];perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;" parent="1" vertex="1">
+      <mxGeometry x="1070" y="710" width="20" height="60" as="geometry" />
+    </mxCell>
+    <mxCell id="msg-set-tel-verif-new" value="4.5: setTelefoneCelularVerificado(true)" style="endArrow=classic;html=1;rounded=0;" parent="1" edge="1">
+      <mxGeometry relative="1" as="geometry">
+        <mxPoint x="570" y="748" as="sourcePoint" />
+        <mxPoint x="1070" y="748" as="targetPoint" />
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="act-ctl-3" value="" style="html=1;points=[[0,0,0,0,5],[0,1,0,0,-5],[1,0,0,0,5],[1,1,0,0,-5]];perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;" parent="1" vertex="1">
+      <mxGeometry x="550" y="870" width="20" height="110" as="geometry" />
+    </mxCell>
+    <mxCell id="act-planos-1" value="" style="html=1;points=[[0,0,0,0,5],[0,1,0,0,-5],[1,0,0,0,5],[1,1,0,0,-5]];perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;" parent="1" vertex="1">
+      <mxGeometry x="1330" y="880" width="20" height="50" as="geometry" />
+    </mxCell>
+    <mxCell id="msg-5" value="5: buscarPlanos()" style="endArrow=classic;html=1;rounded=0;" parent="1" edge="1">
+      <mxGeometry relative="1" as="geometry">
+        <mxPoint x="570" y="895" as="sourcePoint" />
+        <mxPoint x="1330" y="895" as="targetPoint" />
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="ret-planos" value="return: listaPlanos" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;endSize=8;" parent="1" edge="1">
+      <mxGeometry relative="1" as="geometry">
+        <mxPoint x="1330" y="920" as="sourcePoint" />
+        <mxPoint x="570" y="920" as="targetPoint" />
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="act-gui-3" value="" style="html=1;points=[[0,0,0,0,5],[0,1,0,0,-5],[1,0,0,0,5],[1,1,0,0,-5]];perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;" parent="1" vertex="1">
+      <mxGeometry x="290" y="935" width="20" height="40" as="geometry" />
+    </mxCell>
+    <mxCell id="msg-6" value="6: exibirPlanos()" style="endArrow=classic;html=1;rounded=0;" parent="1" edge="1">
+      <mxGeometry relative="1" as="geometry">
+        <mxPoint x="570" y="948" as="sourcePoint" />
+        <mxPoint x="310" y="948" as="targetPoint" />
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="act-gui-4" value="" style="html=1;points=[[0,0,0,0,5],[0,1,0,0,-5],[1,0,0,0,5],[1,1,0,0,-5]];perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;" parent="1" vertex="1">
+      <mxGeometry x="290" y="1020" width="20" height="50" as="geometry" />
+    </mxCell>
+    <mxCell id="msg-7" value="7: selecionarPlano()" style="endArrow=classic;html=1;rounded=0;labelBackgroundColor=#FFFFFF;" parent="1" edge="1">
+      <mxGeometry relative="1" as="geometry">
+        <mxPoint x="80" y="1040" as="sourcePoint" />
+        <mxPoint x="290" y="1040" as="targetPoint" />
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="act-ctl-4" value="" style="html=1;points=[[0,0,0,0,5],[0,1,0,0,-5],[1,0,0,0,5],[1,1,0,0,-5]];perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;" parent="1" vertex="1">
+      <mxGeometry x="550" y="1020" width="20" height="50" as="geometry" />
+    </mxCell>
+    <mxCell id="msg-8" value="8: confirmarPlano()" style="endArrow=classic;html=1;rounded=0;" parent="1" edge="1">
+      <mxGeometry relative="1" as="geometry">
+        <mxPoint x="310" y="1040" as="sourcePoint" />
+        <mxPoint x="550" y="1040" as="targetPoint" />
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="hdr-cesta" value="&lt;font style=&#39;font-size:13px&#39;&gt;«entity»&lt;br/&gt;&lt;u&gt;: Cesta&lt;/u&gt;&lt;/font&gt;" style="html=1;whiteSpace=wrap;" parent="1" vertex="1">
+      <mxGeometry x="2300" y="1110" width="160" height="70" as="geometry" />
+    </mxCell>
+    <mxCell id="msg-create-cesta" value="9: «create»(plano)" style="endArrow=classic;html=1;rounded=0;dashed=1;" parent="1" edge="1">
+      <mxGeometry relative="1" as="geometry">
+        <mxPoint x="570" y="1140" as="sourcePoint" />
+        <mxPoint x="2300" y="1140" as="targetPoint" />
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="ll-cesta" value="" style="endArrow=none;dashed=1;html=1;" parent="1" edge="1">
+      <mxGeometry relative="1" as="geometry">
+        <mxPoint x="2380" y="1180" as="sourcePoint" />
+        <mxPoint x="2380" y="5360" as="targetPoint" />
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="act-ctl-5" value="" style="html=1;points=[[0,0,0,0,5],[0,1,0,0,-5],[1,0,0,0,5],[1,1,0,0,-5]];perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;" parent="1" vertex="1">
+      <mxGeometry x="550" y="1220" width="20" height="230" as="geometry" />
+    </mxCell>
+    <mxCell id="act-cat-1" value="" style="html=1;points=[[0,0,0,0,5],[0,1,0,0,-5],[1,0,0,0,5],[1,1,0,0,-5]];perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;" parent="1" vertex="1">
+      <mxGeometry x="1590" y="1230" width="20" height="55" as="geometry" />
+    </mxCell>
+    <mxCell id="msg-9" value="10: buscarCatalogoSemanal(tipo)" style="endArrow=classic;html=1;rounded=0;" parent="1" edge="1">
+      <mxGeometry relative="1" as="geometry">
+        <mxPoint x="570" y="1245" as="sourcePoint" />
+        <mxPoint x="1590" y="1245" as="targetPoint" />
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="act-ic-1" value="" style="html=1;points=[[0,0,0,0,5],[0,1,0,0,-5],[1,0,0,0,5],[1,1,0,0,-5]];perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;" parent="1" vertex="1">
+      <mxGeometry x="1850" y="1240" width="20" height="40" as="geometry" />
+    </mxCell>
+    <mxCell id="msg-9b" value="10.1: verificarItensDisponiveis()" style="endArrow=classic;html=1;rounded=0;" parent="1" edge="1">
+      <mxGeometry relative="1" as="geometry">
+        <mxPoint x="1610" y="1255" as="sourcePoint" />
+        <mxPoint x="1850" y="1255" as="targetPoint" />
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="act-prod-1" value="" style="html=1;points=[[0,0,0,0,5],[0,1,0,0,-5],[1,0,0,0,5],[1,1,0,0,-5]];perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;" parent="1" vertex="1">
+      <mxGeometry x="2110" y="1250" width="20" height="30" as="geometry" />
+    </mxCell>
+    <mxCell id="msg-9c" value="10.2: buscarDetalhesProduto()" style="endArrow=classic;html=1;rounded=0;" parent="1" edge="1">
+      <mxGeometry relative="1" as="geometry">
+        <mxPoint x="1870" y="1262" as="sourcePoint" />
+        <mxPoint x="2110" y="1262" as="targetPoint" />
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="ret-cat-1" value="return: listaItens" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;endSize=8;" parent="1" edge="1">
+      <mxGeometry relative="1" as="geometry">
+        <mxPoint x="1590" y="1280" as="sourcePoint" />
+        <mxPoint x="570" y="1280" as="targetPoint" />
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="act-gui-5" value="" style="html=1;points=[[0,0,0,0,5],[0,1,0,0,-5],[1,0,0,0,5],[1,1,0,0,-5]];perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;" parent="1" vertex="1">
+      <mxGeometry x="290" y="1292" width="20" height="40" as="geometry" />
+    </mxCell>
+    <mxCell id="msg-10" value="11: exibirItensCatalogo(tipo)" style="endArrow=classic;html=1;rounded=0;" parent="1" edge="1">
+      <mxGeometry relative="1" as="geometry">
+        <mxPoint x="570" y="1305" as="sourcePoint" />
+        <mxPoint x="310" y="1305" as="targetPoint" />
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="act-gui-6" value="" style="html=1;points=[[0,0,0,0,5],[0,1,0,0,-5],[1,0,0,0,5],[1,1,0,0,-5]];perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;" parent="1" vertex="1">
+      <mxGeometry x="290" y="1370" width="20" height="50" as="geometry" />
+    </mxCell>
+    <mxCell id="msg-11" value="12: selecionarItens()" style="endArrow=classic;html=1;rounded=0;labelBackgroundColor=#FFFFFF;" parent="1" edge="1">
+      <mxGeometry relative="1" as="geometry">
+        <mxPoint x="80" y="1390" as="sourcePoint" />
+        <mxPoint x="290" y="1390" as="targetPoint" />
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="act-ctl-6" value="" style="html=1;points=[[0,0,0,0,5],[0,1,0,0,-5],[1,0,0,0,5],[1,1,0,0,-5]];perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;" parent="1" vertex="1">
+      <mxGeometry x="550" y="1370" width="20" height="120" as="geometry" />
+    </mxCell>
+    <mxCell id="msg-12" value="13: confirmarItens()" style="endArrow=classic;html=1;rounded=0;" parent="1" edge="1">
+      <mxGeometry relative="1" as="geometry">
+        <mxPoint x="310" y="1390" as="sourcePoint" />
+        <mxPoint x="550" y="1390" as="targetPoint" />
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="act-cesta-1" value="" style="html=1;points=[[0,0,0,0,5],[0,1,0,0,-5],[1,0,0,0,5],[1,1,0,0,-5]];perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;" parent="1" vertex="1">
+      <mxGeometry x="2370" y="1400" width="20" height="80" as="geometry" />
+    </mxCell>
+    <mxCell id="msg-13" value="14: adicionarItemCesta(itens)" style="endArrow=classic;html=1;rounded=0;" parent="1" edge="1">
+      <mxGeometry relative="1" as="geometry">
+        <mxPoint x="570" y="1415" as="sourcePoint" />
+        <mxPoint x="2370" y="1415" as="targetPoint" />
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="hdr-itemcesta" value="&lt;font style=&#39;font-size:13px&#39;&gt;«entity»&lt;br/&gt;&lt;u&gt;: ItemCesta&lt;/u&gt;&lt;/font&gt;" style="html=1;whiteSpace=wrap;" parent="1" vertex="1">
+      <mxGeometry x="2570" y="1418" width="160" height="70" as="geometry" />
+    </mxCell>
+    <mxCell id="msg-create-ic" value="14.1: «create»" style="endArrow=classic;html=1;rounded=0;dashed=1;" parent="1" edge="1">
+      <mxGeometry relative="1" as="geometry">
+        <mxPoint x="2390" y="1448" as="sourcePoint" />
+        <mxPoint x="2570" y="1448" as="targetPoint" />
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="ll-itemcesta" value="" style="endArrow=none;dashed=1;html=1;" parent="1" edge="1">
+      <mxGeometry relative="1" as="geometry">
+        <mxPoint x="2650" y="1488" as="sourcePoint" />
+        <mxPoint x="2650" y="5360" as="targetPoint" />
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="ret-cesta-1" value="return" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;endSize=8;" parent="1" edge="1">
+      <mxGeometry relative="1" as="geometry">
+        <mxPoint x="2370" y="1475" as="sourcePoint" />
+        <mxPoint x="570" y="1475" as="targetPoint" />
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="act-ctl-11" value="" style="html=1;points=[[0,0,0,0,5],[0,1,0,0,-5],[1,0,0,0,5],[1,1,0,0,-5]];perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;" parent="1" vertex="1">
+      <mxGeometry x="550" y="2140" width="20" height="50" as="geometry" />
+    </mxCell>
+    <mxCell id="act-gui-11" value="" style="html=1;points=[[0,0,0,0,5],[0,1,0,0,-5],[1,0,0,0,5],[1,1,0,0,-5]];perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;" parent="1" vertex="1">
+      <mxGeometry x="290" y="2145" width="20" height="40" as="geometry" />
+    </mxCell>
+    <mxCell id="msg-27" value="15: exibirCestaESolicitarEnderecoEPreferencias()" style="endArrow=classic;html=1;rounded=0;" parent="1" edge="1">
+      <mxGeometry relative="1" as="geometry">
+        <mxPoint x="570" y="2158" as="sourcePoint" />
+        <mxPoint x="310" y="2158" as="targetPoint" />
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="act-gui-12" value="" style="html=1;points=[[0,0,0,0,5],[0,1,0,0,-5],[1,0,0,0,5],[1,1,0,0,-5]];perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;" parent="1" vertex="1">
+      <mxGeometry x="290" y="2230" width="20" height="50" as="geometry" />
+    </mxCell>
+    <mxCell id="msg-28" value="16: informarEnderecoEPreferencias()" style="endArrow=classic;html=1;rounded=0;labelBackgroundColor=#FFFFFF;" parent="1" edge="1">
+      <mxGeometry relative="1" as="geometry">
+        <mxPoint x="80" y="2250" as="sourcePoint" />
+        <mxPoint x="290" y="2250" as="targetPoint" />
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="act-ctl-12" value="" style="html=1;points=[[0,0,0,0,5],[0,1,0,0,-5],[1,0,0,0,5],[1,1,0,0,-5]];perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;" parent="1" vertex="1">
+      <mxGeometry x="550" y="2230" width="20" height="370" as="geometry" />
+    </mxCell>
+    <mxCell id="msg-29" value="17: confirmarCestaEEndereco()" style="endArrow=classic;html=1;rounded=0;" parent="1" edge="1">
+      <mxGeometry relative="1" as="geometry">
+        <mxPoint x="310" y="2250" as="sourcePoint" />
+        <mxPoint x="550" y="2250" as="targetPoint" />
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="hdr-endereco" value="&lt;font style=&#39;font-size:13px&#39;&gt;«entity»&lt;br/&gt;&lt;u&gt;: Endereco&lt;/u&gt;&lt;/font&gt;" style="html=1;whiteSpace=wrap;" parent="1" vertex="1">
+      <mxGeometry x="3070" y="2258" width="160" height="70" as="geometry" />
+    </mxCell>
+    <mxCell id="msg-create-end" value="18: «create»(dadosEndereco)" style="endArrow=classic;html=1;rounded=0;dashed=1;" parent="1" edge="1">
+      <mxGeometry relative="1" as="geometry">
+        <mxPoint x="570" y="2293" as="sourcePoint" />
+        <mxPoint x="3070" y="2293" as="targetPoint" />
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="ll-endereco" value="" style="endArrow=none;dashed=1;html=1;" parent="1" edge="1">
+      <mxGeometry relative="1" as="geometry">
+        <mxPoint x="3150" y="2328" as="sourcePoint" />
+        <mxPoint x="3150" y="5360" as="targetPoint" />
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="hdr-pref" value="&lt;font style=&#39;font-size:13px&#39;&gt;«entity»&lt;br/&gt;&lt;u&gt;: PreferenciaEntrega&lt;/u&gt;&lt;/font&gt;" style="html=1;whiteSpace=wrap;" parent="1" vertex="1">
+      <mxGeometry x="3328" y="2335" width="175" height="70" as="geometry" />
+    </mxCell>
+    <mxCell id="msg-create-pref" value="19: «create»(preferencias)" style="endArrow=classic;html=1;rounded=0;dashed=1;" parent="1" edge="1">
+      <mxGeometry relative="1" as="geometry">
+        <mxPoint x="570" y="2370" as="sourcePoint" />
+        <mxPoint x="3328" y="2370" as="targetPoint" />
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="ll-pref" value="" style="endArrow=none;dashed=1;html=1;" parent="1" edge="1">
+      <mxGeometry relative="1" as="geometry">
+        <mxPoint x="3416" y="2405" as="sourcePoint" />
+        <mxPoint x="3416" y="5360" as="targetPoint" />
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="hdr-assinatura" value="&lt;font style=&#39;font-size:13px&#39;&gt;«entity»&lt;br/&gt;&lt;u&gt;: Assinatura&lt;/u&gt;&lt;/font&gt;" style="html=1;whiteSpace=wrap;" parent="1" vertex="1">
+      <mxGeometry x="2808" y="2420" width="160" height="70" as="geometry" />
+    </mxCell>
+    <mxCell id="msg-create-ass" value="20: «create»(plano, endereco, pref)" style="endArrow=classic;html=1;rounded=0;dashed=1;" parent="1" edge="1">
+      <mxGeometry relative="1" as="geometry">
+        <mxPoint x="570" y="2455" as="sourcePoint" />
+        <mxPoint x="2808" y="2455" as="targetPoint" />
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="ll-assinatura" value="" style="endArrow=none;dashed=1;html=1;" parent="1" edge="1">
+      <mxGeometry relative="1" as="geometry">
+        <mxPoint x="2888" y="2490" as="sourcePoint" />
+        <mxPoint x="2888" y="5360" as="targetPoint" />
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="act-ass-1" value="" style="html=1;points=[[0,0,0,0,5],[0,1,0,0,-5],[1,0,0,0,5],[1,1,0,0,-5]];perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;" parent="1" vertex="1">
+      <mxGeometry x="2878" y="2505" width="20" height="40" as="geometry" />
+    </mxCell>
+    <mxCell id="msg-33" value="21: mudarStatus(aguardandoAprovacao)" style="endArrow=classic;html=1;rounded=0;" parent="1" edge="1">
+      <mxGeometry relative="1" as="geometry">
+        <mxPoint x="570" y="2518" as="sourcePoint" />
+        <mxPoint x="2878" y="2518" as="targetPoint" />
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="hdr-historico" value="&lt;font style=&#39;font-size:13px&#39;&gt;«entity»&lt;br/&gt;&lt;u&gt;: HistoricoStatus&lt;/u&gt;&lt;/font&gt;" style="html=1;whiteSpace=wrap;" parent="1" vertex="1">
+      <mxGeometry x="4638" y="2498" width="170" height="70" as="geometry" />
+    </mxCell>
+    <mxCell id="ll-historico" value="" style="endArrow=none;dashed=1;html=1;" parent="1" edge="1">
+      <mxGeometry relative="1" as="geometry">
+        <mxPoint x="4723" y="2568" as="sourcePoint" />
+        <mxPoint x="4723" y="4200" as="targetPoint" />
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="msg-create-hist" value="21.1: «create»(aguardandoAprovacao)" style="endArrow=classic;html=1;rounded=0;dashed=1;" parent="1" edge="1">
+      <mxGeometry relative="1" as="geometry">
+        <mxPoint x="570" y="2545" as="sourcePoint" />
+        <mxPoint x="4638" y="2545" as="targetPoint" />
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="ret-ass-1" value="return" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;endSize=8;" parent="1" edge="1">
+      <mxGeometry relative="1" as="geometry">
+        <mxPoint x="2878" y="2542" as="sourcePoint" />
+        <mxPoint x="570" y="2542" as="targetPoint" />
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="act-ctl-13" value="" style="html=1;points=[[0,0,0,0,5],[0,1,0,0,-5],[1,0,0,0,5],[1,1,0,0,-5]];perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;" parent="1" vertex="1">
+      <mxGeometry x="550" y="2690" width="20" height="50" as="geometry" />
+    </mxCell>
+    <mxCell id="act-gui-13" value="" style="html=1;points=[[0,0,0,0,5],[0,1,0,0,-5],[1,0,0,0,5],[1,1,0,0,-5]];perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;" parent="1" vertex="1">
+      <mxGeometry x="290" y="2695" width="20" height="40" as="geometry" />
+    </mxCell>
+    <mxCell id="msg-34" value="22: exibirTotalESolicitarPagamento()" style="endArrow=classic;html=1;rounded=0;" parent="1" edge="1">
+      <mxGeometry relative="1" as="geometry">
+        <mxPoint x="570" y="2708" as="sourcePoint" />
+        <mxPoint x="310" y="2708" as="targetPoint" />
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="act-gui-14" value="" style="html=1;points=[[0,0,0,0,5],[0,1,0,0,-5],[1,0,0,0,5],[1,1,0,0,-5]];perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;" parent="1" vertex="1">
+      <mxGeometry x="290" y="2780" width="20" height="50" as="geometry" />
+    </mxCell>
+    <mxCell id="msg-35" value="23: informarDadosCartao()" style="endArrow=classic;html=1;rounded=0;" parent="1" edge="1">
+      <mxGeometry relative="1" as="geometry">
+        <mxPoint x="80" y="2800" as="sourcePoint" />
+        <mxPoint x="290" y="2800" as="targetPoint" />
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="act-ctl-14" value="" style="html=1;points=[[0,0,0,0,5],[0,1,0,0,-5],[1,0,0,0,5],[1,1,0,0,-5]];perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;" parent="1" vertex="1">
+      <mxGeometry x="550" y="2780" width="20" height="400" as="geometry" />
+    </mxCell>
+    <mxCell id="msg-36" value="24: processarPagamento(dadosCartao)" style="endArrow=classic;html=1;rounded=0;" parent="1" edge="1">
+      <mxGeometry relative="1" as="geometry">
+        <mxPoint x="310" y="2800" as="sourcePoint" />
+        <mxPoint x="550" y="2800" as="targetPoint" />
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="hdr-metpag" value="&lt;font style=&#39;font-size:13px&#39;&gt;«entity»&lt;br/&gt;&lt;u&gt;: MetodoPagamento&lt;/u&gt;&lt;/font&gt;" style="html=1;whiteSpace=wrap;" parent="1" vertex="1">
+      <mxGeometry x="3583" y="2808" width="175" height="70" as="geometry" />
+    </mxCell>
+    <mxCell id="msg-create-mp" value="25: «create»(dadosCartao)" style="endArrow=classic;html=1;rounded=0;dashed=1;" parent="1" edge="1">
+      <mxGeometry relative="1" as="geometry">
+        <mxPoint x="570" y="2843" as="sourcePoint" />
+        <mxPoint x="3583" y="2843" as="targetPoint" />
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="ll-metpag" value="" style="endArrow=none;dashed=1;html=1;" parent="1" edge="1">
+      <mxGeometry relative="1" as="geometry">
+        <mxPoint x="3671" y="2878" as="sourcePoint" />
+        <mxPoint x="3671" y="5360" as="targetPoint" />
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="msg-38" value="26: validarPagamento(metodoPagamento)" style="endArrow=classic;html=1;rounded=0;" parent="1" edge="1">
+      <mxGeometry relative="1" as="geometry">
+        <mxPoint x="570" y="2905" as="sourcePoint" />
+        <mxPoint x="4960" y="2905" as="targetPoint" />
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="ret-op" value="return: aprovado" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;endSize=8;" parent="1" edge="1">
+      <mxGeometry relative="1" as="geometry">
+        <mxPoint x="4950" y="2930" as="sourcePoint" />
+        <mxPoint x="570" y="2930" as="targetPoint" />
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="hdr-pagamento" value="&lt;font style=&#39;font-size:13px&#39;&gt;«entity»&lt;br/&gt;&lt;u&gt;: Pagamento&lt;/u&gt;&lt;/font&gt;" style="html=1;whiteSpace=wrap;" parent="1" vertex="1">
+      <mxGeometry x="3838" y="2938" width="160" height="70" as="geometry" />
+    </mxCell>
+    <mxCell id="msg-create-pag" value="27: «create»(metodoPagamento)" style="endArrow=classic;html=1;rounded=0;dashed=1;" parent="1" edge="1">
+      <mxGeometry relative="1" as="geometry">
+        <mxPoint x="570" y="2973" as="sourcePoint" />
+        <mxPoint x="3838" y="2973" as="targetPoint" />
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="ll-pagamento" value="" style="endArrow=none;dashed=1;html=1;" parent="1" edge="1">
+      <mxGeometry relative="1" as="geometry">
+        <mxPoint x="3918" y="3008" as="sourcePoint" />
+        <mxPoint x="3918" y="5360" as="targetPoint" />
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="act-ass-2" value="" style="html=1;points=[[0,0,0,0,5],[0,1,0,0,-5],[1,0,0,0,5],[1,1,0,0,-5]];perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;" parent="1" vertex="1">
+      <mxGeometry x="2878" y="3030" width="20" height="90" as="geometry" />
+    </mxCell>
+    <mxCell id="msg-40" value="28: mudarStatus(aprovado)" style="endArrow=classic;html=1;rounded=0;" parent="1" edge="1">
+      <mxGeometry relative="1" as="geometry">
+        <mxPoint x="570" y="3045" as="sourcePoint" />
+        <mxPoint x="2878" y="3045" as="targetPoint" />
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="msg-41" value="29: gerarNumeroProtocolo()" style="endArrow=classic;html=1;rounded=0;" parent="1" edge="1">
+      <mxGeometry relative="1" as="geometry">
+        <mxPoint x="570" y="3085" as="sourcePoint" />
+        <mxPoint x="2878" y="3085" as="targetPoint" />
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="msg-reg-hist" value="29.1: registrarStatus(aprovado)" style="endArrow=classic;html=1;rounded=0;" parent="1" edge="1">
+      <mxGeometry relative="1" as="geometry">
+        <mxPoint x="570" y="3108" as="sourcePoint" />
+        <mxPoint x="4723" y="3108" as="targetPoint" />
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="act-hist-reg" value="" style="html=1;points=[[0,0,0,0,5],[0,1,0,0,-5],[1,0,0,0,5],[1,1,0,0,-5]];perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;" parent="1" vertex="1">
+      <mxGeometry x="4713" y="3100" width="20" height="30" as="geometry" />
+    </mxCell>
+    <mxCell id="ret-ass-2" value="return: numProtocolo" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;endSize=8;" parent="1" edge="1">
+      <mxGeometry relative="1" as="geometry">
+        <mxPoint x="2878" y="3118" as="sourcePoint" />
+        <mxPoint x="570" y="3118" as="targetPoint" />
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="act-ctl-15" value="" style="html=1;points=[[0,0,0,0,5],[0,1,0,0,-5],[1,0,0,0,5],[1,1,0,0,-5]];perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;" parent="1" vertex="1">
+      <mxGeometry x="550" y="3260" width="20" height="140" as="geometry" />
+    </mxCell>
+    <mxCell id="hdr-entrega" value="&lt;font style=&#39;font-size:13px&#39;&gt;«entity»&lt;br/&gt;&lt;u&gt;: Entrega&lt;/u&gt;&lt;/font&gt;" style="html=1;whiteSpace=wrap;" parent="1" vertex="1">
+      <mxGeometry x="4086" y="3263" width="160" height="70" as="geometry" />
+    </mxCell>
+    <mxCell id="msg-create-entr" value="30: «create»(numProtocolo, endereco, pref)" style="endArrow=classic;html=1;rounded=0;dashed=1;" parent="1" edge="1">
+      <mxGeometry relative="1" as="geometry">
+        <mxPoint x="570" y="3298" as="sourcePoint" />
+        <mxPoint x="4086" y="3298" as="targetPoint" />
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="ll-entrega" value="" style="endArrow=none;dashed=1;html=1;" parent="1" edge="1">
+      <mxGeometry relative="1" as="geometry">
+        <mxPoint x="4166" y="3333" as="sourcePoint" />
+        <mxPoint x="4166" y="5360" as="targetPoint" />
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="ret-entr" value="return: dadosEntrega" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;endSize=8;" parent="1" edge="1">
+      <mxGeometry relative="1" as="geometry">
+        <mxPoint x="4086" y="3330" as="sourcePoint" />
+        <mxPoint x="570" y="3330" as="targetPoint" />
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="act-gui-15" value="" style="html=1;points=[[0,0,0,0,5],[0,1,0,0,-5],[1,0,0,0,5],[1,1,0,0,-5]];perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;" parent="1" vertex="1">
+      <mxGeometry x="290" y="3320" width="20" height="88" as="geometry" />
+    </mxCell>
+    <mxCell id="msg-43" value="31: exibirSucessoEProtocolo(dadosEntrega, numProtocolo)" style="endArrow=classic;html=1;rounded=0;" parent="1" edge="1">
+      <mxGeometry relative="1" as="geometry">
+        <mxPoint x="570" y="3340" as="sourcePoint" />
+        <mxPoint x="310" y="3340" as="targetPoint" />
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="msg-44" value="return: confirmacao + numProtocolo" style="endArrow=open;dashed=1;endSize=8;html=1;" parent="1" edge="1">
+      <mxGeometry relative="1" as="geometry">
+        <mxPoint x="570" y="3390" as="sourcePoint" />
+        <mxPoint x="310" y="3390" as="targetPoint" />
+      </mxGeometry>
+    </mxCell>
+  </root>
+</mxGraphModel>

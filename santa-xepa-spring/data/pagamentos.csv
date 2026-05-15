@@ -1,0 +1,4 @@
+id;idAssinatura;valor;statusPagamento;codigoAutorizacao;codigoTransacao;motivoRecusa;tentativas;bandeira;numCartaoMascarado;dataProcessamento
+PAG-1778586218576;ASN-1778586200453;49.90;APROVADO;AUT-473225;TX-CF3F15B8;;1;VISA;**** **** **** 0000;2026-05-12 11:43:38
+PAG-1778801633891;ASN-1778801600120;89.90;APROVADO;AUT-CFC901;TX-AF840EE6;;1;Visa;**** **** **** 0000;2026-05-14 23:33:54
+PAG-1778802343993;ASN-1778802314246;49.90;APROVADO;AUT-4B9768;TX-DABC0494;;1;Master;**** **** **** 0000;2026-05-14 23:45:44

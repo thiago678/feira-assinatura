@@ -1,0 +1,997 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Santa Xepa</title>
+<link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&family=DM+Sans:wght@400;600;700;800&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#EDE8DC;
+  --green:#2A5C1E;
+  --gd:#1E4415;
+  --y:#F5C842;
+  --yf:#F5D878;
+  --yl:#FBE9A0;
+  --txt:#1A3A12;
+  --muted:#7A9E72;
+}
+body{
+  background:#B8B4A4;
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:20px;
+  font-family:'DM Sans',sans-serif;
+}
+.phone{
+  width:375px;
+  height:812px;
+  background:var(--bg);
+  border-radius:48px;
+  box-shadow:0 40px 100px rgba(0,0,0,.35),inset 0 1px 0 rgba(255,255,255,.3);
+  overflow:hidden;
+  display:flex;
+  flex-direction:column;
+  position:relative;
+}
+
+/* Telas */
+.scr{display:none;flex-direction:column;height:100%;overflow:hidden}
+.scr.on{display:flex}
+
+/* Barra superior */
+.top-bar{
+  padding:16px 20px 0;
+  display:flex;
+  align-items:center;
+  min-height:52px;
+  flex-shrink:0;
+}
+.back{
+  font-family:'DM Sans',sans-serif;
+  font-size:13px;
+  font-weight:800;
+  color:var(--green);
+  cursor:pointer;
+  background:none;
+  border:none;
+  display:flex;
+  align-items:center;
+  gap:6px;
+  text-transform:uppercase;
+  letter-spacing:.06em;
+  padding:6px 0;
+}
+.back::before{content:'←';font-size:18px}
+
+/* Scroll body */
+.body{
+  flex:1;
+  overflow-y:auto;
+  padding:0 22px 8px;
+  display:flex;
+  flex-direction:column;
+  gap:0;
+  scrollbar-width:none;
+}
+.body::-webkit-scrollbar{display:none}
+
+/* Footer fixo */
+.footer{
+  padding:10px 22px 20px;
+  flex-shrink:0;
+  background:var(--bg);
+}
+
+/* Logo */
+.logo-block{
+  text-align:center;
+  padding:20px 20px 12px;
+  flex-shrink:0;
+}
+.pine-big{font-size:60px;line-height:1;display:block;margin-bottom:4px}
+.brand{
+  font-family:'Luckiest Guy',cursive;
+  font-size:52px;
+  color:var(--green);
+  line-height:.95;
+  letter-spacing:2px;
+  text-shadow:4px 4px 0 var(--y);
+}
+.tagline{
+  font-size:10px;
+  font-weight:700;
+  color:var(--muted);
+  text-transform:uppercase;
+  letter-spacing:.14em;
+  margin-top:6px;
+}
+
+/* Títulos de seção */
+.sec-title{
+  font-family:'Luckiest Guy',cursive;
+  color:var(--green);
+  text-shadow:2px 2px 0 var(--y);
+  letter-spacing:1px;
+  line-height:1.05;
+  margin-bottom:14px;
+  font-size:30px;
+}
+.sec-sub{
+  font-size:12px;
+  font-weight:600;
+  color:var(--muted);
+  margin-top:-10px;
+  margin-bottom:14px;
+  text-transform:uppercase;
+  letter-spacing:.06em;
+}
+
+/* Inputs */
+.inp{
+  width:100%;
+  padding:14px 16px;
+  background:#fff;
+  border:2.5px solid var(--yf);
+  border-radius:14px;
+  font-family:'DM Sans',sans-serif;
+  font-size:14px;
+  font-weight:700;
+  color:var(--green);
+  outline:none;
+  letter-spacing:.03em;
+  transition:border-color .2s;
+}
+.inp::placeholder{color:#B8C8B4;font-weight:600}
+.inp:focus{border-color:var(--green)}
+.fw{margin-bottom:10px}
+.row2{display:grid;grid-template-columns:2fr 1fr;gap:8px;margin-bottom:10px}
+.rowh{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:10px}
+
+/* Botão principal */
+.btn{
+  width:100%;
+  padding:16px;
+  background:var(--green);
+  border:none;
+  border-radius:18px;
+  font-family:'Luckiest Guy',cursive;
+  font-size:18px;
+  color:var(--y);
+  letter-spacing:1.5px;
+  cursor:pointer;
+  text-transform:uppercase;
+  transition:background .15s,transform .1s;
+  box-shadow:0 4px 0 var(--gd);
+}
+.btn:hover{background:var(--gd)}
+.btn:active{transform:translateY(2px);box-shadow:0 2px 0 var(--gd)}
+.btn:disabled{background:#999;box-shadow:0 4px 0 #666;cursor:wait}
+
+/* Badge contador */
+.badge{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  background:var(--y);
+  color:var(--green);
+  font-size:11px;
+  font-weight:800;
+  padding:3px 10px;
+  border-radius:20px;
+  margin-left:auto;
+}
+
+/* Planos */
+.plans{display:flex;flex-direction:column;gap:8px;margin-bottom:8px}
+.pc{
+  border-radius:16px;
+  overflow:hidden;
+  cursor:pointer;
+  border:3px solid transparent;
+  transition:border-color .2s,transform .15s;
+  display:flex;
+  align-items:stretch;
+}
+.pc:hover{transform:translateY(-1px)}
+.pc.sel{border-color:var(--gd)}
+.ph{
+  background:var(--y);
+  padding:0 12px;
+  display:flex;
+  align-items:center;
+  min-width:96px;
+  flex-shrink:0;
+}
+.ph-txt{
+  font-family:'Luckiest Guy',cursive;
+  font-size:13px;
+  color:var(--green);
+  letter-spacing:1px;
+  line-height:1.2;
+}
+.pb{
+  background:var(--green);
+  padding:12px;
+  flex:1;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  gap:3px;
+}
+.pchip{
+  font-size:12px;
+  font-weight:800;
+  color:var(--y);
+  text-transform:uppercase;
+  letter-spacing:.03em;
+}
+.pp{
+  background:var(--yl);
+  padding:0 12px;
+  display:flex;
+  align-items:center;
+  flex-shrink:0;
+  min-width:64px;
+  justify-content:center;
+}
+.pp span{
+  font-family:'Luckiest Guy',cursive;
+  font-size:12px;
+  color:var(--green);
+  text-align:center;
+  line-height:1.3;
+}
+.semana{
+  font-family:'Luckiest Guy',cursive;
+  font-size:16px;
+  color:var(--y);
+  text-align:center;
+  text-shadow:1px 1px 0 var(--green);
+  letter-spacing:1px;
+  margin-bottom:2px;
+}
+
+/* Checklist */
+.chklist{display:flex;flex-direction:column}
+.chi{
+  display:flex;
+  align-items:center;
+  gap:14px;
+  padding:12px 6px;
+  cursor:pointer;
+  border-bottom:1.5px solid rgba(42,92,30,.08);
+  transition:background .1s;
+  border-radius:8px;
+}
+.chi:last-child{border-bottom:none}
+.chi:hover{background:rgba(42,92,30,.04)}
+.chk{
+  width:26px;height:26px;
+  background:var(--yl);
+  border-radius:7px;
+  border:2.5px solid var(--y);
+  flex-shrink:0;
+  display:flex;align-items:center;justify-content:center;
+  transition:all .15s;
+}
+.chk.on{background:var(--green);border-color:var(--green)}
+.chk.on::after{content:'✓';color:var(--y);font-weight:900;font-size:14px}
+.chlbl{
+  font-size:16px;
+  font-weight:800;
+  color:var(--green);
+}
+.limite-bar{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  margin-bottom:10px;
+  padding:0 2px;
+}
+.limite-txt{font-size:12px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
+
+/* Resumo da cesta */
+.resumo-cols{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:10px}
+.rcol{
+  background:#fff;
+  border-radius:14px;
+  padding:12px;
+  border:2px solid var(--yl);
+}
+.rcol.full{grid-column:1/-1}
+.rcol h3{
+  font-family:'Luckiest Guy',cursive;
+  font-size:14px;
+  color:var(--y);
+  text-shadow:1px 1px 0 var(--green);
+  margin-bottom:8px;
+  letter-spacing:1px;
+}
+.rline{
+  font-size:12px;
+  font-weight:700;
+  color:var(--green);
+  padding:3px 0;
+  display:flex;
+  align-items:center;
+  gap:6px;
+}
+.rline::before{content:'•';color:var(--y);font-size:14px}
+.empty-line{font-size:11px;color:var(--muted);font-style:italic;padding:3px 0}
+
+/* Preferências */
+.pref-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:6px;margin-bottom:10px}
+.pref-btn{
+  padding:10px 4px;
+  background:#fff;
+  border:2px solid var(--yf);
+  border-radius:10px;
+  text-align:center;
+  cursor:pointer;
+  font-size:11px;
+  font-weight:800;
+  color:var(--green);
+  text-transform:uppercase;
+  letter-spacing:.04em;
+  transition:all .15s;
+}
+.pref-btn.on{background:var(--green);color:var(--y);border-color:var(--green)}
+.pref-grid2{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-bottom:10px}
+
+/* Pagamento */
+.pag-resumo{
+  background:var(--green);
+  border-radius:16px;
+  padding:14px 16px;
+  margin-bottom:12px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
+.pag-info{color:var(--y)}
+.pag-nome{font-family:'Luckiest Guy',cursive;font-size:18px;letter-spacing:1px}
+.pag-sub{font-size:11px;font-weight:600;opacity:.8;margin-top:2px}
+.pag-preco{text-align:right}
+.pag-preco-val{font-family:'Luckiest Guy',cursive;font-size:22px;color:#fff}
+.pag-preco-txt{font-size:10px;font-weight:700;color:var(--y);opacity:.8}
+.bandeiras{display:flex;gap:6px;margin-bottom:10px}
+.band-btn{
+  flex:1;padding:8px;
+  background:#fff;border:2px solid var(--yf);
+  border-radius:10px;text-align:center;cursor:pointer;
+  font-size:12px;font-weight:800;color:var(--green);
+  transition:all .15s;
+}
+.band-btn.on{background:var(--y);border-color:var(--green)}
+
+/* Tela de sucesso */
+.success-top{
+  background:var(--green);
+  padding:28px 22px 32px;
+  text-align:center;
+  border-radius:0 0 40px 40px;
+  flex-shrink:0;
+}
+.success-pine{font-size:72px;line-height:1;margin-bottom:8px;display:block}
+.success-title{
+  font-family:'Luckiest Guy',cursive;
+  font-size:36px;
+  color:var(--y);
+  text-shadow:3px 3px 0 rgba(0,0,0,.2);
+  line-height:1;
+  letter-spacing:1px;
+}
+.success-sub{color:rgba(255,255,255,.75);font-size:13px;font-weight:600;margin-top:6px}
+.prot-box{
+  background:#fff;
+  border-radius:16px;
+  padding:16px;
+  margin:16px 0 10px;
+  border:2px solid var(--yl);
+  text-align:center;
+}
+.prot-label{font-size:11px;font-weight:800;color:var(--muted);text-transform:uppercase;letter-spacing:.1em;margin-bottom:6px}
+.prot-num{
+  font-family:'Luckiest Guy',cursive;
+  font-size:22px;
+  color:var(--green);
+  letter-spacing:3px;
+  text-decoration:underline;
+  text-decoration-style:wavy;
+  text-decoration-color:var(--y);
+}
+.detail-row{
+  display:flex;justify-content:space-between;align-items:center;
+  padding:10px 14px;
+  background:#fff;
+  border-radius:12px;
+  margin-bottom:6px;
+  border:2px solid var(--yl);
+}
+.detail-key{font-size:12px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.06em}
+.detail-val{font-size:13px;font-weight:800;color:var(--green)}
+
+/* Toast */
+.toast{
+  position:fixed;bottom:28px;left:50%;transform:translateX(-50%);
+  background:var(--green);color:var(--y);
+  font-family:'Luckiest Guy',cursive;font-size:13px;letter-spacing:1px;
+  padding:10px 20px;border-radius:12px;
+  opacity:0;transition:opacity .3s;pointer-events:none;z-index:999;
+  white-space:nowrap;
+}
+.toast.show{opacity:1}
+
+/* Hint SMS */
+.hint-box{
+  background:var(--yl);
+  border:2px dashed var(--y);
+  border-radius:12px;
+  padding:10px 14px;
+  font-size:12px;
+  font-weight:700;
+  color:var(--green);
+  text-align:center;
+  margin-bottom:10px;
+}
+.hint-code{font-size:22px;letter-spacing:6px;font-family:'Luckiest Guy',cursive;display:block;margin-top:4px}
+</style>
+</head>
+<body>
+<div class="phone">
+
+<!-- T1: Telefone -->
+<div class="scr on" id="t1">
+  <div class="body" style="justify-content:center;gap:20px">
+    <div style="text-align:center">
+      <span class="pine-big">🍍</span>
+      <div class="brand">SANTA<br>XEPA</div>
+      <div class="tagline">Nós descascamos o abacaxi pra você</div>
+    </div>
+    <div class="sec-title" style="font-size:20px;text-align:center;margin-bottom:0">
+      PARA COMEÇAR SEU MILAGRE SEMANAL, INFORME SEU CELULAR:
+    </div>
+    <input class="inp" id="inp-tel" type="tel" placeholder="(XX) XXXXX-XXXX"
+           oninput="fmtTel(this)" style="text-align:center;font-size:18px;letter-spacing:.1em"/>
+  </div>
+  <div class="footer"><button class="btn" onclick="enviarSMS()">RECEBER CÓDIGO POR SMS</button></div>
+</div>
+
+<!-- T2: SMS -->
+<div class="scr" id="t2">
+  <div class="top-bar"><button class="back" onclick="goTo('t1')">VOLTAR</button></div>
+  <div class="body" style="justify-content:center;gap:20px">
+    <div style="text-align:center">
+      <span style="font-size:52px">🍍</span>
+      <div class="sec-title" style="font-size:24px;text-align:center;margin-bottom:0">CÓDIGO DE<br>VERIFICAÇÃO</div>
+    </div>
+    <div id="hint-sms" class="hint-box" style="display:none">
+      🧪 Simulação — código:<span class="hint-code" id="hint-code">—</span>
+    </div>
+    <input class="inp" id="inp-sms" type="text" placeholder="_ _ _ _ _ _"
+           maxlength="6" style="text-align:center;font-size:28px;letter-spacing:.4em"/>
+    <p id="sms-err" style="font-size:12px;color:#C03030;font-weight:700;text-align:center;min-height:18px;margin-top:-10px"></p>
+  </div>
+  <div class="footer"><button class="btn" onclick="validarSMS()">VALIDAR CÓDIGO</button></div>
+</div>
+
+<!-- T3: Planos -->
+<div class="scr" id="t3">
+  <div class="body" style="justify-content:center;gap:20px">
+    <div style="text-align:center">
+      <span style="font-size:44px">🍍</span>
+      <div class="sec-title" style="font-size:34px;text-align:center;margin-bottom:0">PLANOS<br>DISPONÍVEIS</div>
+    </div>
+    <div class="plans" id="plans-list"></div>
+    <div class="semana">POR SEMANA</div>
+  </div>
+  <div class="footer"><button class="btn" onclick="confirmarPlano()">CONFIRMAR PLANO</button></div>
+</div>
+
+<!-- T4: Frutas -->
+<div class="scr" id="t4">
+  <div class="top-bar">
+    <button class="back" onclick="goTo('t3')">VOLTAR</button>
+    <span class="badge" id="badge-FRUTA">0/0</span>
+  </div>
+  <div class="body" style="gap:16px">
+    <div style="text-align:center">
+      <div style="font-size:36px">🍌🍎🍊</div>
+      <div class="sec-title" style="font-size:28px;margin-bottom:0">ESCOLHA SUAS FRUTAS</div>
+      <div class="sec-sub" id="sub-FRUTA" style="margin:4px 0 0">Selecione até 0</div>
+    </div>
+    <div class="chklist" id="list-FRUTA"></div>
+  </div>
+  <div class="footer"><button class="btn" onclick="goTo('t5')">CONFIRMAR FRUTAS</button></div>
+</div>
+
+<!-- T5: Legumes -->
+<div class="scr" id="t5">
+  <div class="top-bar">
+    <button class="back" onclick="goTo('t4')">VOLTAR</button>
+    <span class="badge" id="badge-LEGUME">0/0</span>
+  </div>
+  <div class="body" style="gap:16px">
+    <div style="text-align:center">
+      <div style="font-size:36px">🥕🥔🍅</div>
+      <div class="sec-title" style="font-size:28px;margin-bottom:0">ESCOLHA SEUS LEGUMES</div>
+      <div class="sec-sub" id="sub-LEGUME" style="margin:4px 0 0">Selecione até 0</div>
+    </div>
+    <div class="chklist" id="list-LEGUME"></div>
+  </div>
+  <div class="footer"><button class="btn" onclick="goTo('t6')">CONFIRMAR LEGUMES</button></div>
+</div>
+
+<!-- T6: Verduras -->
+<div class="scr" id="t6">
+  <div class="top-bar">
+    <button class="back" onclick="goTo('t5')">VOLTAR</button>
+    <span class="badge" id="badge-VERDURA">0/0</span>
+  </div>
+  <div class="body" style="gap:16px">
+    <div style="text-align:center">
+      <div style="font-size:36px">🥬🌿🥦</div>
+      <div class="sec-title" style="font-size:28px;margin-bottom:0">ESCOLHA SUAS VERDURAS</div>
+      <div class="sec-sub" id="sub-VERDURA" style="margin:4px 0 0">Selecione até 0</div>
+    </div>
+    <div class="chklist" id="list-VERDURA"></div>
+  </div>
+  <div class="footer"><button class="btn" onclick="goTo('t7')">CONFIRMAR VERDURAS</button></div>
+</div>
+
+<!-- T7: Resumo da cesta -->
+<div class="scr" id="t7">
+  <div class="top-bar"><button class="back" onclick="goTo('t6')">VOLTAR</button></div>
+  <div class="body" style="justify-content:center;gap:16px">
+    <div style="text-align:center">
+      <div style="font-size:44px">🧺</div>
+      <div class="sec-title" style="font-size:30px;margin-bottom:0">SUA FEIRA<br>DA SEMANA</div>
+    </div>
+    <div class="resumo-cols" id="resumo"></div>
+  </div>
+  <div class="footer"><button class="btn" onclick="goTo('t8')">AMÉM! CONFIRMAR CESTA</button></div>
+</div>
+
+<!-- T8: Endereço -->
+<div class="scr" id="t8">
+  <div class="top-bar"><button class="back" onclick="goTo('t7')">VOLTAR</button></div>
+  <div class="body" style="gap:0">
+    <div style="text-align:center;margin-bottom:14px">
+      <div style="font-size:36px">📍</div>
+      <div class="sec-title" style="font-size:26px;margin-bottom:0">ENDEREÇO<br>DE ENTREGA</div>
+    </div>
+    <div class="fw"><input class="inp" id="e-log" type="text" placeholder="LOGRADOURO"/></div>
+    <div class="row2">
+      <input class="inp" id="e-num" type="text" placeholder="NÚMERO"/>
+      <input class="inp" id="e-uf" type="text" placeholder="UF" maxlength="2"/>
+    </div>
+    <div class="fw"><input class="inp" id="e-bai" type="text" placeholder="BAIRRO"/></div>
+    <div class="rowh">
+      <input class="inp" id="e-cid" type="text" placeholder="CIDADE"/>
+      <input class="inp" id="e-cep" type="text" placeholder="CEP"/>
+    </div>
+    <div class="fw"><input class="inp" id="e-ref" type="text" placeholder="PONTO DE REFERÊNCIA (opcional)"/></div>
+    <div style="font-size:11px;font-weight:800;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;margin-bottom:6px">Dia preferido</div>
+    <div class="pref-grid" id="dias-grid" style="margin-bottom:12px"></div>
+    <div style="font-size:11px;font-weight:800;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;margin-bottom:6px">Turno preferido</div>
+    <div class="pref-grid2" id="turnos-grid"></div>
+  </div>
+  <div class="footer"><button class="btn" onclick="confirmarCesta()">CONFIRMAR ENDEREÇO</button></div>
+</div>
+
+<!-- T9: Pagamento -->
+<div class="scr" id="t9">
+  <div class="top-bar"><button class="back" onclick="goTo('t8')">VOLTAR</button></div>
+  <div class="body" style="justify-content:center;gap:12px">
+    <div style="text-align:center">
+      <div style="font-size:36px">💳</div>
+      <div class="sec-title" style="font-size:26px;margin-bottom:0">FORMA DE<br>PAGAMENTO</div>
+    </div>
+    <div class="pag-resumo">
+      <div class="pag-info">
+        <div class="pag-nome" id="pag-nome">—</div>
+        <div class="pag-sub">por semana</div>
+      </div>
+      <div class="pag-preco">
+        <div class="pag-preco-txt">TOTAL</div>
+        <div class="pag-preco-val" id="pag-val">R$ —</div>
+      </div>
+    </div>
+    <div class="bandeiras">
+      <div class="band-btn on" onclick="selBand(this,'Visa')">VISA</div>
+      <div class="band-btn" onclick="selBand(this,'Master')">MASTER</div>
+      <div class="band-btn" onclick="selBand(this,'Elo')">ELO</div>
+    </div>
+    <input class="inp" id="p-num" type="text" placeholder="NÚMERO DO CARTÃO" oninput="fmtCard(this)" maxlength="19"/>
+    <input class="inp" id="p-tit" type="text" placeholder="NOME DO TITULAR"/>
+    <input class="inp" id="p-cpf" type="text" placeholder="CPF DO TITULAR" oninput="fmtCpf(this)" maxlength="14"/>
+    <div class="rowh">
+      <input class="inp" id="p-val" type="text" placeholder="VALIDADE MM/AA" maxlength="5"/>
+      <input class="inp" id="p-cvv" type="text" placeholder="CVV" maxlength="4"/>
+    </div>
+  </div>
+  <div class="footer"><button class="btn" id="btn-pagar" onclick="pagar()">CONFIRMAR PAGAMENTO</button></div>
+</div>
+
+<!-- T10: Sucesso -->
+<div class="scr" id="t10">
+  <div class="success-top">
+    <span class="success-pine">🍍</span>
+    <div class="success-title">MILAGRE<br>CONFIRMADO!</div>
+    <div class="success-sub">Sua feira chega toda semana na sua porta 🎉</div>
+  </div>
+  <div class="body" style="justify-content:center;gap:10px">
+    <div class="prot-box">
+      <div class="prot-label">Número do Protocolo</div>
+      <div class="prot-num" id="prot-num">—</div>
+    </div>
+    <div class="detail-row">
+      <span class="detail-key">Plano</span>
+      <span class="detail-val" id="det-plano">—</span>
+    </div>
+    <div class="detail-row">
+      <span class="detail-key">Valor</span>
+      <span class="detail-val" id="det-valor">—</span>
+    </div>
+    <div class="detail-row">
+      <span class="detail-key">Entrega</span>
+      <span class="detail-val" id="det-dia">—</span>
+    </div>
+    <div class="detail-row">
+      <span class="detail-key">Transação</span>
+      <span class="detail-val" id="det-trans">—</span>
+    </div>
+  </div>
+  <div class="footer"><button class="btn" onclick="reiniciar()">NOVA ASSINATURA</button></div>
+</div>
+
+</div><!-- /phone -->
+<div class="toast" id="toast"></div>
+
+<script>
+const API = window.location.hostname === 'localhost'
+  ? 'http://localhost:8080/api'
+  : 'https://improved-space-couscous-97x6w7pwvjgf99qj-8080.app.github.dev/api';
+
+let sessionId   = null;
+let planoSel    = null;
+let planosData  = [];
+let catalogo    = { FRUTA:[], LEGUME:[], VERDURA:[] };
+let selecionados= { FRUTA:[], LEGUME:[], VERDURA:[] };
+let limites     = { FRUTA:0, LEGUME:0, VERDURA:0 };
+let diaEscolhido  = 'SEXTA';
+let turnoEscolhido= 'MANHA';
+let bandeira    = 'Visa';
+
+const DIAS   = ['SEG','TER','QUA','QUI','SEX','SAB'];
+const DIAS_VAL=['SEGUNDA','TERCA','QUARTA','QUINTA','SEXTA','SABADO'];
+const TURNOS = ['MANHÃ','TARDE','NOITE'];
+const TURNOS_VAL=['MANHA','TARDE','NOITE'];
+
+// ── Utilitários ────────────────────────────────────────────────────────────
+
+function toast(msg) {
+  const el = document.getElementById('toast');
+  el.textContent = msg;
+  el.classList.add('show');
+  setTimeout(() => el.classList.remove('show'), 2600);
+}
+
+function goTo(id) {
+  document.querySelectorAll('.scr').forEach(s => s.classList.remove('on'));
+  document.getElementById(id).classList.add('on');
+  if (id === 't3') carregarPlanos();
+  if (id === 't4') carregarCatalogo('FRUTA');
+  if (id === 't5') carregarCatalogo('LEGUME');
+  if (id === 't6') carregarCatalogo('VERDURA');
+  if (id === 't7') renderResumo();
+  if (id === 't8') renderPrefs();
+  if (id === 't9') renderPag();
+}
+
+function fmtTel(el) {
+  let v = el.value.replace(/\D/g,'').slice(0,11);
+  if (v.length > 6) v = `(${v.slice(0,2)}) ${v.slice(2,7)}-${v.slice(7)}`;
+  else if (v.length > 2) v = `(${v.slice(0,2)}) ${v.slice(2)}`;
+  el.value = v;
+}
+
+function fmtCard(el) {
+  let v = el.value.replace(/\D/g,'').slice(0,16);
+  el.value = v.replace(/(.{4})/g,'$1 ').trim();
+}
+
+function fmtCpf(el) {
+  let v = el.value.replace(/\D/g,'').slice(0,11);
+  if (v.length > 9)      v = v.replace(/(\d{3})(\d{3})(\d{3})(\d{2})/,'$1.$2.$3-$4');
+  else if (v.length > 6) v = v.replace(/(\d{3})(\d{3})(\d+)/,'$1.$2.$3');
+  else if (v.length > 3) v = v.replace(/(\d{3})(\d+)/,'$1.$2');
+  el.value = v;
+}
+
+function selBand(el, b) {
+  bandeira = b;
+  document.querySelectorAll('.band-btn').forEach(x => x.classList.remove('on'));
+  el.classList.add('on');
+}
+
+// ── SMS ────────────────────────────────────────────────────────────────────
+
+async function enviarSMS() {
+  const tel = document.getElementById('inp-tel').value;
+  if (!tel) { toast('Digite o telefone!'); return; }
+  const btn = event.target; btn.disabled = true;
+  try {
+    const r = await fetch(`${API}/sms/enviar`, {
+      method:'POST', headers:{'Content-Type':'application/json'},
+      body: JSON.stringify({ telefone: tel.replace(/\D/g,'') })
+    });
+    const d = await r.json();
+    sessionId = d.sessionId;
+    if (d.sucesso) {
+      // mostra hint com o código (acadêmico)
+      document.getElementById('hint-sms').style.display = 'block';
+      document.getElementById('hint-code').textContent = '(veja no console do servidor)';
+      document.getElementById('sms-err').textContent = '';
+      goTo('t2');
+    } else { toast(d.mensagem); }
+  } catch(e) { toast('Servidor offline. Rode o Spring Boot!'); }
+  btn.disabled = false;
+}
+
+async function validarSMS() {
+  const cod = document.getElementById('inp-sms').value.replace(/\D/g,'');
+  if (cod.length < 6) { toast('Digite os 6 dígitos!'); return; }
+  const btn = event.target; btn.disabled = true;
+  try {
+    const r = await fetch(`${API}/sms/validar`, {
+      method:'POST', headers:{'Content-Type':'application/json'},
+      body: JSON.stringify({ sessionId, codigo: cod })
+    });
+    const d = await r.json();
+    if (d.sucesso) {
+      document.getElementById('sms-err').textContent = '';
+      goTo('t3');
+    } else {
+      document.getElementById('sms-err').textContent =
+        `Código inválido. Tentativas restantes: ${d.tentativasRestantes}`;
+    }
+  } catch(e) { toast('Erro de conexão.'); }
+  btn.disabled = false;
+}
+
+// ── Planos ─────────────────────────────────────────────────────────────────
+
+async function carregarPlanos() {
+  try {
+    const r = await fetch(`${API}/planos?sessionId=${sessionId}`);
+    planosData = await r.json();
+    renderPlanos();
+  } catch(e) { toast('Erro ao carregar planos.'); }
+}
+
+function renderPlanos() {
+  const el = document.getElementById('plans-list');
+  el.innerHTML = planosData.map((p, i) => `
+    <div class="pc${i===0?' sel':''}" id="pc-${p.id}" onclick="selPlano('${p.id}')">
+      <div class="ph"><div class="ph-txt">${p.nome.replace(' ','<br>')}</div></div>
+      <div class="pb">
+        <span class="pchip">🍌 ${p.frutas} FRUTAS</span>
+        <span class="pchip">🥕 ${p.legumes} LEGUMES</span>
+        <span class="pchip">🥬 ${p.verduras} VERDURAS</span>
+      </div>
+      <div class="pp"><span>R$<br>${p.preco.toFixed(2).replace('.',',')}</span></div>
+    </div>`).join('');
+  if (planosData.length) selPlano(planosData[0].id);
+}
+
+function selPlano(id) {
+  planoSel = planosData.find(p => p.id === id);
+  document.querySelectorAll('.pc').forEach(c => c.classList.remove('sel'));
+  document.getElementById('pc-'+id).classList.add('sel');
+  limites = { FRUTA: planoSel.frutas, LEGUME: planoSel.legumes, VERDURA: planoSel.verduras };
+  selecionados = { FRUTA:[], LEGUME:[], VERDURA:[] };
+  catalogo = { FRUTA:[], LEGUME:[], VERDURA:[] };
+}
+
+async function confirmarPlano() {
+  if (!planoSel) { toast('Selecione um plano!'); return; }
+  const btn = event.target; btn.disabled = true;
+  try {
+    const r = await fetch(`${API}/planos/confirmar`, {
+      method:'POST', headers:{'Content-Type':'application/json'},
+      body: JSON.stringify({ sessionId, idPlano: planoSel.id })
+    });
+    const d = await r.json();
+    if (d.sucesso) goTo('t4');
+    else toast('Erro ao confirmar plano.');
+  } catch(e) { toast('Erro de conexão.'); }
+  btn.disabled = false;
+}
+
+// ── Catálogo / Cesta ───────────────────────────────────────────────────────
+
+async function carregarCatalogo(tipo) {
+  // atualiza badge e sub
+  atualizarBadge(tipo);
+  document.getElementById('sub-'+tipo).textContent =
+    `Selecione até ${limites[tipo]} (não obrigatório)`;
+  if (catalogo[tipo].length) { renderCatalogo(tipo); return; }
+  try {
+    const r = await fetch(`${API}/catalogo/${tipo}?sessionId=${sessionId}`);
+    catalogo[tipo] = await r.json();
+    renderCatalogo(tipo);
+  } catch(e) { toast('Erro ao carregar catálogo.'); }
+}
+
+function renderCatalogo(tipo) {
+  const el = document.getElementById('list-'+tipo);
+  el.innerHTML = catalogo[tipo].map(item => {
+    const on = selecionados[tipo].includes(item.id);
+    return `<div class="chi" onclick="toggleItem('${tipo}','${item.id}')">
+      <div class="chk${on?' on':''}" id="chk-${item.id}"></div>
+      <span class="chlbl">${item.nome}</span>
+    </div>`;
+  }).join('');
+}
+
+async function toggleItem(tipo, id) {
+  const arr = selecionados[tipo];
+  const idx = arr.indexOf(id);
+  if (idx >= 0) {
+    arr.splice(idx, 1);
+  } else if (arr.length < limites[tipo]) {
+    arr.push(id);
+    try {
+      await fetch(`${API}/cesta/adicionar`, {
+        method:'POST', headers:{'Content-Type':'application/json'},
+        body: JSON.stringify({ sessionId, idItem: id })
+      });
+    } catch(e) { arr.pop(); toast('Erro ao adicionar item.'); return; }
+  } else {
+    toast(`Limite de ${limites[tipo]} para este tipo atingido!`);
+    return;
+  }
+  atualizarBadge(tipo);
+  renderCatalogo(tipo);
+}
+
+function atualizarBadge(tipo) {
+  const el = document.getElementById('badge-'+tipo);
+  if (el) el.textContent = `${selecionados[tipo].length}/${limites[tipo]}`;
+}
+
+// ── Resumo ─────────────────────────────────────────────────────────────────
+
+function renderResumo() {
+  const nomes = id => {
+    const all = [...catalogo.FRUTA,...catalogo.LEGUME,...catalogo.VERDURA];
+    return all.find(x => x.id === id);
+  };
+  const linhas = (tipo) => selecionados[tipo].length
+    ? selecionados[tipo].map(id => {
+        const item = nomes(id);
+        return `<div class="rline">${item ? item.nome : id}</div>`;
+      }).join('')
+    : `<div class="empty-line">nenhuma selecionada</div>`;
+
+  document.getElementById('resumo').innerHTML =
+    `<div class="rcol"><h3>🍌 FRUTAS</h3>${linhas('FRUTA')}</div>` +
+    `<div class="rcol"><h3>🥕 LEGUMES</h3>${linhas('LEGUME')}</div>` +
+    `<div class="rcol full"><h3>🥬 VERDURAS</h3>${linhas('VERDURA')}</div>`;
+}
+
+// ── Preferências ───────────────────────────────────────────────────────────
+
+function renderPrefs() {
+  const dg = document.getElementById('dias-grid');
+  dg.innerHTML = DIAS.map((d, i) =>
+    `<div class="pref-btn${DIAS_VAL[i]===diaEscolhido?' on':''}"
+          onclick="selDia(this,'${DIAS_VAL[i]}')">${d}</div>`).join('');
+  const tg = document.getElementById('turnos-grid');
+  tg.innerHTML = TURNOS.map((t, i) =>
+    `<div class="pref-btn${TURNOS_VAL[i]===turnoEscolhido?' on':''}"
+          onclick="selTurno(this,'${TURNOS_VAL[i]}')">${t}</div>`).join('');
+}
+
+function selDia(el, v) {
+  diaEscolhido = v;
+  document.querySelectorAll('#dias-grid .pref-btn').forEach(x => x.classList.remove('on'));
+  el.classList.add('on');
+}
+
+function selTurno(el, v) {
+  turnoEscolhido = v;
+  document.querySelectorAll('#turnos-grid .pref-btn').forEach(x => x.classList.remove('on'));
+  el.classList.add('on');
+}
+
+// ── Confirmar cesta ────────────────────────────────────────────────────────
+
+async function confirmarCesta() {
+  const log = document.getElementById('e-log').value.trim();
+  const cid = document.getElementById('e-cid').value.trim();
+  if (!log || !cid) { toast('Preencha logradouro e cidade!'); return; }
+
+  const btn = event.target; btn.disabled = true;
+  try {
+    const r = await fetch(`${API}/cesta/confirmar`, {
+      method:'POST', headers:{'Content-Type':'application/json'},
+      body: JSON.stringify({
+        sessionId,
+        logradouro: log,
+        numero:     document.getElementById('e-num').value,
+        bairro:     document.getElementById('e-bai').value,
+        cidade:     cid,
+        cep:        document.getElementById('e-cep').value,
+        uf:         document.getElementById('e-uf').value || 'SP',
+        referencia: document.getElementById('e-ref').value,
+        dia:        diaEscolhido,
+        turno:      turnoEscolhido,
+        substituicao: 'true'
+      })
+    });
+    const d = await r.json();
+    if (d.sucesso) goTo('t9');
+    else toast('Erro ao confirmar cesta.');
+  } catch(e) { toast('Erro de conexão.'); }
+  btn.disabled = false;
+}
+
+// ── Pagamento ──────────────────────────────────────────────────────────────
+
+function renderPag() {
+  if (!planoSel) return;
+  document.getElementById('pag-nome').textContent = planoSel.nome.toUpperCase();
+  document.getElementById('pag-val').textContent  = 'R$ ' + planoSel.preco.toFixed(2).replace('.',',');
+}
+
+async function pagar() {
+  const num = document.getElementById('p-num').value.replace(/\s/g,'');
+  const tit = document.getElementById('p-tit').value.trim();
+  const cpf = document.getElementById('p-cpf').value.trim();
+  const val = document.getElementById('p-val').value.trim();
+  const cvv = document.getElementById('p-cvv').value.trim();
+  if (!num || !tit || !cpf || !val || !cvv) { toast('Preencha todos os dados do cartão e CPF!'); return; }
+
+  const btn = document.getElementById('btn-pagar'); btn.disabled = true;
+  btn.textContent = 'PROCESSANDO...';
+  try {
+    const r = await fetch(`${API}/pagamento`, {
+      method:'POST', headers:{'Content-Type':'application/json'},
+      // CPF pertence ao Assinante (diagrama de classes) — enviado para associar ao cadastro
+      body: JSON.stringify({ sessionId, numeroCartao:num, titular:tit, cpf, validade:val, bandeira })
+    });
+    const d = await r.json();
+    if (d.sucesso) {
+      document.getElementById('prot-num').textContent    = d.protocolo;
+      document.getElementById('det-plano').textContent   = planoSel.nome;
+      document.getElementById('det-valor').textContent   = 'R$ ' + planoSel.preco.toFixed(2).replace('.',',') + '/sem';
+      document.getElementById('det-dia').textContent     = diaEscolhido + ', ' + turnoEscolhido;
+      document.getElementById('det-trans').textContent   = d.transacao || '—';
+      goTo('t10');
+    } else { toast(d.mensagem || 'Pagamento recusado.'); }
+  } catch(e) { toast('Erro de conexão.'); }
+  btn.disabled = false;
+  btn.textContent = 'CONFIRMAR PAGAMENTO';
+}
+
+// ── Reiniciar ──────────────────────────────────────────────────────────────
+
+function reiniciar() {
+  sessionId = null; planoSel = null; planosData = [];
+  catalogo = {FRUTA:[],LEGUME:[],VERDURA:[]};
+  selecionados = {FRUTA:[],LEGUME:[],VERDURA:[]};
+  limites = {FRUTA:0,LEGUME:0,VERDURA:0};
+  diaEscolhido = 'SEXTA'; turnoEscolhido = 'MANHA'; bandeira = 'Visa';
+  document.getElementById('inp-tel').value = '';
+  document.getElementById('inp-sms').value = '';
+  goTo('t1');
+}
+</script>
+</body>
+</html>
