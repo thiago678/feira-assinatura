@@ -1,5 +1,0 @@
-idHistorico;idAssinatura;entidade;statusAnterior;statusNovo;motivo;responsavel;dataAlteracao
-HST-1778586200456;ASN-1778586200453;Assinatura;-;AGUARDANDO_APROVACAO;Status inicial;sistema;2026-05-12 11:43:20
-HST-1778586200456;ASN-1778586200453;Assinatura;AGUARDANDO_APROVACAO;AGUARDANDO_APROVACAO;Atualização de status;sistema;2026-05-12 11:43:20
-HST-1778586200456;ASN-1778586200453;Assinatura;AGUARDANDO_APROVACAO;APROVADA;Atualização de status;sistema;2026-05-12 11:43:38
-HST-1778586200456;ASN-1778586200453;Assinatura;APROVADA;APROVADA;Pagamento aprovado;sistema;2026-05-12 11:43:38
