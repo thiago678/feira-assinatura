@@ -579,6 +579,15 @@ body{
     <div class="pref-grid" id="dias-grid" style="margin-bottom:12px"></div>
     <div style="font-size:11px;font-weight:800;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;margin-bottom:6px">Turno preferido</div>
     <div class="pref-grid2" id="turnos-grid"></div>
+    <div style="display:flex;align-items:center;gap:10px;margin-top:12px;padding:12px;background:#fff;border-radius:12px;border:2px solid var(--yl)">
+      <div id="chk-subst" onclick="toggleSubst()"
+        style="width:26px;height:26px;background:var(--green);border-radius:7px;border:2.5px solid var(--green);flex-shrink:0;display:flex;align-items:center;justify-content:center;cursor:pointer">
+        <span style="color:var(--y);font-weight:900;font-size:14px">✓</span>
+      </div>
+      <label onclick="toggleSubst()" style="font-size:12px;font-weight:700;color:var(--green);cursor:pointer;line-height:1.3">
+        Aceito substituição de itens quando algum produto não estiver disponível
+      </label>
+    </div>
   </div>
   <div class="footer"><button class="btn" onclick="confirmarCesta()">CONFIRMAR ENDEREÇO</button></div>
 </div>
@@ -663,9 +672,10 @@ let planosData  = [];
 let catalogo    = { FRUTA:[], LEGUME:[], VERDURA:[] };
 let selecionados= { FRUTA:[], LEGUME:[], VERDURA:[] };
 let limites     = { FRUTA:0, LEGUME:0, VERDURA:0 };
-let diaEscolhido  = 'SEXTA';
-let turnoEscolhido= 'MANHA';
-let bandeira    = 'Visa';
+let diaEscolhido      = 'SEXTA';
+let turnoEscolhido    = 'MANHA';
+let bandeira          = 'Visa';
+let aceitaSubstituicao = true;
 
 const DIAS   = ['SEG','TER','QUA','QUI','SEX','SAB'];
 const DIAS_VAL=['SEGUNDA','TERCA','QUARTA','QUINTA','SEXTA','SABADO'];
@@ -723,7 +733,8 @@ function selBand(el, b) {
 
 async function enviarSMS() {
   const tel = document.getElementById('inp-tel').value;
-  if (!tel) { toast('Digite o telefone!'); return; }
+  const digits = tel.replace(/\D/g,'');
+  if (digits.length < 11) { toast('Digite um celular válido com DDD (11 dígitos)!'); return; }
   const btn = event.target; btn.disabled = true;
   try {
     const r = await fetch(`${API}/sms/enviar`, {
@@ -898,6 +909,20 @@ function renderPrefs() {
           onclick="selTurno(this,'${TURNOS_VAL[i]}')">${t}</div>`).join('');
 }
 
+function toggleSubst() {
+  aceitaSubstituicao = !aceitaSubstituicao;
+  const chk = document.getElementById('chk-subst');
+  if (aceitaSubstituicao) {
+    chk.style.background = 'var(--green)';
+    chk.style.borderColor = 'var(--green)';
+    chk.innerHTML = '<span style="color:var(--y);font-weight:900;font-size:14px">✓</span>';
+  } else {
+    chk.style.background = '#fff';
+    chk.style.borderColor = 'var(--yf)';
+    chk.innerHTML = '';
+  }
+}
+
 function selDia(el, v) {
   diaEscolhido = v;
   document.querySelectorAll('#dias-grid .pref-btn').forEach(x => x.classList.remove('on'));
@@ -932,7 +957,7 @@ async function confirmarCesta() {
         referencia: document.getElementById('e-ref').value,
         dia:        diaEscolhido,
         turno:      turnoEscolhido,
-        substituicao: 'true'
+        substituicao: String(aceitaSubstituicao)
       })
     });
     const d = await r.json();
@@ -987,7 +1012,7 @@ function reiniciar() {
   catalogo = {FRUTA:[],LEGUME:[],VERDURA:[]};
   selecionados = {FRUTA:[],LEGUME:[],VERDURA:[]};
   limites = {FRUTA:0,LEGUME:0,VERDURA:0};
-  diaEscolhido = 'SEXTA'; turnoEscolhido = 'MANHA'; bandeira = 'Visa';
+  diaEscolhido = 'SEXTA'; turnoEscolhido = 'MANHA'; bandeira = 'Visa'; aceitaSubstituicao = true;
   document.getElementById('inp-tel').value = '';
   document.getElementById('inp-sms').value = '';
   goTo('t1');
